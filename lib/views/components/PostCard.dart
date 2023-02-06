@@ -7,6 +7,10 @@ class PostCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        border:  Border.all(width: 2, color: Colors.black, style: BorderStyle.solid)
+      ),
+      padding:const EdgeInsets.all(20),
       child: Column(children: [
         Text(title),
         Text(description),
