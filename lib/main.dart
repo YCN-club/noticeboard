@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:notice_board/viewmodels/PostViewModel.dart';
 import 'package:notice_board/views/mainPages/HomePage.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
+  await dotenv.load(fileName: ".env");
   runApp(const GetMaterialApp(
     home: MainApp(),
   ));

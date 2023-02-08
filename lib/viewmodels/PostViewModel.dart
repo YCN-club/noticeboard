@@ -10,11 +10,9 @@ class PostViewModel extends GetxController{
   
   Future fetchPosts()async{
     RawPostResponse rawPostResponse;
-    const JsonDecoder decoder = JsonDecoder();
     var temp = await _repo.getPosts();
     if(temp.length>0){
     rawPostResponse =  RawPostResponse.fromJson(jsonDecode(temp));
-    print(temp);
     posts.value = rawPostResponse.data;
   }
   }

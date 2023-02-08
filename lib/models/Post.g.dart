@@ -16,6 +16,7 @@ Post _$PostFromJson(Map<String, dynamic> json) => Post(
       json['createdAt'] as String,
       json['updatedAt'] as String,
       json['publishedAt'] as String,
+      json['Image'],
     );
 
 Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{
@@ -28,4 +29,5 @@ Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{
       'createdAt': instance.createdAt,
       'updatedAt': instance.updatedAt,
       'publishedAt': instance.publishedAt,
+      'Image': instance.Image,
     };

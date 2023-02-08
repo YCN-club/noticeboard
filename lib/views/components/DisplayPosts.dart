@@ -7,10 +7,15 @@ class DisplayPosts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: posts.length,
-      itemBuilder: (context, index) {
-        return Container();
-      });
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+      ListView.builder(
+          itemCount: posts.length,
+          itemBuilder: (context, index) {
+            return Container();
+          })
+    ]);
   }
 }
