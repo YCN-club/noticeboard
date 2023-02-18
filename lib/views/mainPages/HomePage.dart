@@ -33,25 +33,27 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Expanded(
-                      child: SizedBox(
-                          width: 500.0,
-                          child: ListView.builder(
-                              itemCount: controller.posts.isNotEmpty
-                                  ? controller.posts.length
-                                  : 0,
-                              itemBuilder: ((context, index) {
-                                var currentData =
-                                    controller.posts[index].attributes;
-                                return PostCard(
-                                    title: currentData.title,
-                                    description: currentData.description,
-                                    startDateTime: currentData.startDateTime,
-                                    endDateTime: currentData.endDateTime,
-                                    publishedAt: currentData.publishedAt,
-                                    image: currentData.Image,
-                                    );
-                              }))))
+                  // Expanded(
+                  //     child: SizedBox(
+                  //         width: 500.0,
+                  //         child: ListView.builder(
+                  //             itemCount: controller.posts.isNotEmpty
+                  //                 ? controller.posts.length
+                  //                 : 0,
+                  //             itemBuilder: ((context, index) {
+                  //               var currentData =
+                  //                   controller.posts[index].attributes;
+                  //               return PostCard(
+                  //                   title: currentData.title,
+                  //                   description: currentData.description,
+                  //                   startDateTime: currentData.startDateTime,
+                  //                   endDateTime: currentData.endDateTime,
+                  //                   publishedAt: currentData.publishedAt,
+                  //                   image: currentData.Image,
+                  //                   );
+                  //             }))))
+                  const Text("hii this is really cool"),
+                  Text(controller.testNotion.string)
                 ])
           ]);
         }));
