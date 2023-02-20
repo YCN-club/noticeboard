@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:http/http.dart' as http;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:notice_board/models/Post.dart';
@@ -37,39 +36,48 @@ class PostRepo {
 
   //   return {"name": "your mum"};
   // }
-  static const String _baseUrl = 'api.notion.com';
+  static const String _baseUrl = 'https://api.notion.com/v1/';
 
-  final http.Client _client;
-
-  PostRepo({http.Client? client}) : _client = client ?? http.Client();
+  final _client = http.Client();
 
   void dispose() {
     _client.close(); //Always close HTTP clients after using them.
   }
 
-  Future getPosts() async {
+  Future<List<Post>> getPosts() async {
     try {
-      final url = '${_baseUrl}databases/${dotenv.env['NOTION_DATABASE']}/query';
-      final response = await _client.post(
-        Uri.https(
-            _baseUrl, '/v1/databases/${dotenv.env['NOTION_DATABASE']}/query'),
-        headers: {
-          HttpHeaders.authorizationHeader:
-              'Bearer ${dotenv.env['NOTION_SECRET']}',
-          'Notion-Version': '2022-02-22',
-           'accept': 'application/json',
-      'Content-Type': 'application/json-patch+json',
-        },
-      );
-        if (response.statusCode == 200) {
+      var url = '${_baseUrl}databases/${dotenv.env['NOTION_DATABASE']}/query';
+      var response = await _client.post(Uri.parse(url), headers: {
+        HttpHeaders.authorizationHeader:
+            'Bearer ${dotenv.env['NOTION_SECRET']}',
+        'Notion-Version': '2022-02-22',
+        'accept': 'application/json',
+        'Content-Type': 'application/json',
+      }, body: jsonEncode({
+        "filter": {
+          "property": "published",
+          "checkbox": {"equals": true}
+        }
+      }));
+      if (response.statusCode == 200) {
         final data = jsonDecode(response.body) as Map<String, dynamic>;
-        print(data);
-        return (data);
+        return (data['results'] as List).map((e) => Post.fromMap(e)).toList();
       }
     } catch (_) {
       print(_.toString());
       print("ayoooo something went wrong");
     }
-    return ({});
+    return [
+      const Post(
+          title: "",
+          shortDescription: "",
+          longDescription: "",
+          startDateTime: "",
+          endDateTime: "",
+          uid: "",
+          createdAt: "",
+          updatedAt: "",
+          Image: "")
+    ];
   }
 }

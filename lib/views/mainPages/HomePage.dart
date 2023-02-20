@@ -10,7 +10,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return GetX<PostViewModel>(builder: (controller) {
+        return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed:controller.fetchPosts,child: Icon(Icons.replay_outlined), ),
         appBar: AppBar(
           title: const Text("Manipal Notice Board"),
 
@@ -27,35 +29,36 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-        body: GetX<PostViewModel>(builder: (controller) {
-          return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+        body: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // Expanded(
-                  //     child: SizedBox(
-                  //         width: 500.0,
-                  //         child: ListView.builder(
-                  //             itemCount: controller.posts.isNotEmpty
-                  //                 ? controller.posts.length
-                  //                 : 0,
-                  //             itemBuilder: ((context, index) {
-                  //               var currentData =
-                  //                   controller.posts[index].attributes;
-                  //               return PostCard(
-                  //                   title: currentData.title,
-                  //                   description: currentData.description,
-                  //                   startDateTime: currentData.startDateTime,
-                  //                   endDateTime: currentData.endDateTime,
-                  //                   publishedAt: currentData.publishedAt,
-                  //                   image: currentData.Image,
-                  //                   );
-                  //             }))))
-                  const Text("hii this is really cool"),
-                  Text(controller.testNotion.string)
+                  Expanded(
+                      child: SizedBox(
+                          width: 300.0,
+                          child: ListView.builder(
+                              itemCount: controller.posts.isNotEmpty
+                                  ? controller.posts.length
+                                  : 0,
+                              itemBuilder: ((context, index) {
+                                var currentData =
+                                    controller.posts[index];
+                                return PostCard(
+                                    title: currentData.title,
+                                    description: currentData.shortDescription,
+                                    startDateTime: currentData.startDateTime,
+                                    endDateTime: currentData.endDateTime,
+                                    publishedAt: currentData.updatedAt,
+                                    image: currentData.Image,
+                                    );
+                                // return ListTile(
+                                //   title: Text(currentData.title),
+                                // );
+                              }))))
                 ])
-          ]);
-        }));
+          ]
+          ));
+        });
   }
 }
