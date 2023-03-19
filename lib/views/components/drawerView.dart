@@ -10,7 +10,11 @@ class DrawerView extends StatelessWidget {
   const DrawerView({super.key});
 
   Future<void> _launchURL(String url) async {
-    final Uri uri = Uri(scheme: "https", host: "www.docs.google.com", path: "/forms/d/e/1FAIpQLScV8JBTgLg9eWwk3OdepyzpQd1oXD64dLx2PrPKg37fGN3jfQ/viewform");
+    final Uri uri = Uri(
+        scheme: "https",
+        host: "www.docs.google.com",
+        path:
+            "/forms/d/e/1FAIpQLScV8JBTgLg9eWwk3OdepyzpQd1oXD64dLx2PrPKg37fGN3jfQ/viewform");
     if (!await launchUrl(
       uri,
       mode: LaunchMode.externalApplication,
@@ -53,7 +57,6 @@ class DrawerView extends StatelessWidget {
         ListTile(
           leading: IconButton(
             onPressed: () {
-             
               Get.to(const contributorsPage());
             },
             icon: const Icon(
@@ -64,7 +67,10 @@ class DrawerView extends StatelessWidget {
           title: const Text(
             "Contributors",
             style: TextStyle(
-                color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),
+              color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
         ListTile(
