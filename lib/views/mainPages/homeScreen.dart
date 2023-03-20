@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:notice_board/noticeList.dart';
-import 'package:notice_board/settingsScreen.dart';
-import 'notice.dart';
-import 'drawerView.dart';
-
+import 'package:get/get.dart';
+import 'package:notice_board/viewmodels/PostViewModel.dart';
+import 'package:notice_board/views/mainPages/settingsScreen.dart';
+import '../../models/notice.dart';
+import '../components/noticeList.dart';
+import '../components/drawerView.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -14,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  
   final List<Notice> noticeArray = [
     Notice(
       "Welcome to Manipal Notice Board",
@@ -90,7 +90,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return GetX<PostViewModel>(builder: (controller){
+      return
+    Scaffold(
+       floatingActionButton: FloatingActionButton(onPressed:controller.fetchPosts,child: Icon(Icons.replay_outlined), ),
       appBar: AppBar(
         title: const Text("Manipal Notice Board"),
         actions: [
@@ -107,11 +110,12 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-      body: NoticeList(noticeArray),
+      body: NoticeList(controller.posts.value),
       drawer: const Drawer(
         backgroundColor: Colors.black,
         child: DrawerView(),
       ),
     );
+    });
   }
 }

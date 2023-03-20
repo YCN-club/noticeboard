@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:notice_board/homeScreen.dart';
+import 'package:get/get.dart';
+import 'package:notice_board/viewmodels/PostViewModel.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:notice_board/views/mainPages/homeScreen.dart';
 
-void main() {
-  runApp(const MyApp());
+void main(List<String> args) async {
+  await dotenv.load(fileName: ".env");
+  runApp(const MainApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Notice Board',
-      theme: ThemeData(
-        primarySwatch: primaryBlack,
-      ),
-      home: HomeScreen(),
-    );
+    final PostViewModel controller = Get.put(PostViewModel());
+    controller.fetchPosts();
+    return  GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+    title: 'Notice Board',
+      theme: ThemeData(primarySwatch: primaryBlack),
+    home: const HomeScreen(),
+  );  
   }
 }
 

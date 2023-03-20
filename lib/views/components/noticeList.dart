@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:notice_board/infoScreen.dart';
-import 'package:notice_board/main.dart';
-
-import 'package:notice_board/notice.dart';
-import 'package:intl/intl.dart';
+import 'package:notice_board/models/Post.dart';
+import 'package:notice_board/views/mainPages/infoScreen.dart';
 
 class NoticeList extends StatefulWidget {
-  final List<Notice> noticeArray;
+  final List<Post> noticeArray;
   NoticeList(this.noticeArray);
 
   @override
@@ -29,18 +26,18 @@ class _NoticeListState extends State<NoticeList> {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  IconButton(
-                      onPressed: () {
-                        setState(() {
-                          nt.unread ? nt.unread = false : nt.unread = true;
-                        });
-                      },
-                      icon: Icon(
-                        nt.unread
-                            ? Icons.mark_email_unread
-                            : Icons.mark_email_read,
-                        color: nt.unread ? Colors.orange : Colors.grey,
-                      )),
+                  // IconButton(
+                  //     onPressed: () {
+                  //       setState(() {
+                  //         nt.unread ? nt.unread = false : nt.unread = true;
+                  //       });
+                  //     },
+                  //     icon: Icon(
+                  //       nt.unread
+                  //           ? Icons.mark_email_unread
+                  //           : Icons.mark_email_read,
+                  //       color: nt.unread ? Colors.orange : Colors.grey,
+                  //     )),
                   const SizedBox(
                     width: 10,
                   ),
@@ -56,14 +53,14 @@ class _NoticeListState extends State<NoticeList> {
                               letterSpacing: -0.6,
                               color: Colors.white),
                         ),
-                        Text(
-                          DateFormat.yMMMd().format(nt.date),
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12,
-                              letterSpacing: -0.6,
-                              color: Colors.grey),
-                        ),
+                        // Text(
+                        //   DateFormat.yMMMd().format(nt.startDateTime),
+                        //   style: const TextStyle(
+                        //       fontWeight: FontWeight.bold,
+                        //       fontSize: 12,
+                        //       letterSpacing: -0.6,
+                        //       color: Colors.grey),
+                        // ),
                       ],
                     ),
                   ),
@@ -72,13 +69,14 @@ class _NoticeListState extends State<NoticeList> {
               const SizedBox(height: 20),
               ClipRRect(
                 borderRadius: BorderRadius.circular(5),
-                child: nt.displayImage,
+                child: FadeInImage.assetNetwork(
+                    placeholder: 'images/loading.gif', image: nt.Image),
               ),
               const SizedBox(
                 height: 20,
               ),
               Text(
-                nt.description,
+                nt.shortDescription,
                 style: const TextStyle(
                   fontWeight: FontWeight.normal,
                   fontSize: 15,

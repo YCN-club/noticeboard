@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:notice_board/notice.dart';
+import 'package:notice_board/models/Post.dart';
+import 'package:notice_board/models/notice.dart';
 import 'package:intl/intl.dart';
 
 class InfoScreen extends StatelessWidget {
-  Notice infoNotice;
+  Post infoNotice;
 
   InfoScreen(this.infoNotice);
 
@@ -16,7 +17,7 @@ class InfoScreen extends StatelessWidget {
       body: SingleChildScrollView(
           child: Column(
         children: [
-          infoNotice.displayImage,
+          Image.network(infoNotice.Image),
           Column(
             children: [
               ClipRRect(
@@ -42,19 +43,19 @@ class InfoScreen extends StatelessWidget {
                         const SizedBox(
                           height: 10,
                         ),
-                        Text(
-                          DateFormat.yMMMd().format(infoNotice.date),
-                          style: const TextStyle(
-                              color: Colors.grey,
-                              fontSize: 17,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: -1),
-                        ),
+                        // Text(
+                        //   DateFormat.yMMMd().format(infoNotice.date),
+                        //   style: const TextStyle(
+                        //       color: Colors.grey,
+                        //       fontSize: 17,
+                        //       fontWeight: FontWeight.w600,
+                        //       letterSpacing: -1),
+                        // ),
                         const SizedBox(
                           height: 20,
                         ),
                         Text(
-                          infoNotice.description,
+                          infoNotice.longDescription,
                           style: const TextStyle(
                               color: Colors.grey,
                               fontSize: 15,

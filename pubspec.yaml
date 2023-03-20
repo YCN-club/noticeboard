@@ -1,5 +1,5 @@
 name: notice_board
-description: A new Flutter project.
+description: An interactive notice board to spread awareness of all the events happening in MAHE BLR
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -40,10 +40,17 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  get: ^4.6.5
+  http: ^0.13.5
+  json_serializable: ^6.6.1
+  flutter_dotenv: ^5.0.2
+  webview_flutter: ^4.0.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^2.3.3
+  json_annotation: ^4.8.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -59,6 +66,9 @@ dev_dependencies:
 flutter:
   assets:
     - images/mitBuilding.jpeg
+    - .env
+    - images/placeholder.jpg
+    - images/loading.gif
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -66,9 +76,6 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
