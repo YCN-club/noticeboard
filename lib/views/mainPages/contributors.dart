@@ -46,28 +46,30 @@ class Contributors extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Contributor's page"),),
-      body: Expanded(child: 
-      SingleChildScrollView(
-          child: GridView.count(
-        crossAxisCount: 2,
-        children: contributors.map((ct) {
-          return Card(
-            child: Column(children: [
-              ClipOval(
-                child: ct.pfp,
-              ),
-              Text(ct.username),
-              ElevatedButton(
-                  onPressed: () {
-                    _launchURL(ct.profileLink);
-                  },
-                  child: const Text("Profile"))
-            ]),
-          );
-        }).toList(),
-      )),
-    )
-      ,);
+      appBar: AppBar(
+        title: const Text("Contributor's page"),
+      ),
+      body: Expanded(
+        child: SingleChildScrollView(
+            child: GridView.count(
+          crossAxisCount: 2,
+          children: contributors.map((ct) {
+            return Card(
+              child: Column(children: [
+                ClipOval(
+                  child: ct.pfp,
+                ),
+                Text(ct.username),
+                ElevatedButton(
+                    onPressed: () {
+                      _launchURL(ct.profileLink);
+                    },
+                    child: const Text("Profile"))
+              ]),
+            );
+          }).toList(),
+        )),
+      ),
+    );
   }
 }

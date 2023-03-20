@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:notice_board/models/Post.dart';
 import 'package:notice_board/views/mainPages/infoScreen.dart';
 
-
 class NoticeList extends StatefulWidget {
   final List<Post> noticeArray;
   NoticeList(this.noticeArray);
@@ -70,7 +69,8 @@ class _NoticeListState extends State<NoticeList> {
               const SizedBox(height: 20),
               ClipRRect(
                 borderRadius: BorderRadius.circular(5),
-                child: Image.network(nt.Image),
+                child: FadeInImage.assetNetwork(
+                    placeholder: 'images/loading.gif', image: nt.Image),
               ),
               const SizedBox(
                 height: 20,

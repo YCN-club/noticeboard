@@ -57,7 +57,7 @@ class DrawerView extends StatelessWidget {
         ListTile(
           leading: IconButton(
             onPressed: () {
-              Get.to(const contributorsPage());
+              Get.to(contributorsPage());
             },
             icon: const Icon(
               Icons.people,

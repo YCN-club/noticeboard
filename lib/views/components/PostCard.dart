@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class PostCard extends StatelessWidget {
-  final String title, description, startDateTime, endDateTime, publishedAt, image;
+  final String title,
+      description,
+      startDateTime,
+      endDateTime,
+      publishedAt,
+      image;
   const PostCard(
       {Key? key,
       required this.title,
@@ -10,20 +15,21 @@ class PostCard extends StatelessWidget {
       required this.startDateTime,
       required this.endDateTime,
       required this.publishedAt,
-      required this.image
-      })
+      required this.image})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // DateTime sdt = DateTime.parse(startDateTime);
     // DateTime edt = DateTime.parse(endDateTime);
-    return Card(      
+    return Card(
       elevation: 10.0,
       child: Column(children: [
-
-        image!=null? Image.network(image): Image.network(""),
-       ListTile(
+        image != null
+            ? FadeInImage.assetNetwork(
+                placeholder: 'images/placeholder.jpeg', image: image)
+            : Image.network(""),
+        ListTile(
           title: Text(title),
           subtitle: Text(description),
         ),
