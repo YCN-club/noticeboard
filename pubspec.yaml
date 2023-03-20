@@ -69,6 +69,7 @@ flutter:
     - .env
     - images/placeholder.jpg
     - images/loading.gif
+    - images/cxlogo.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
