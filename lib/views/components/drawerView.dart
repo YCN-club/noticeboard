@@ -3,7 +3,6 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/route_manager.dart';
 import 'package:notice_board/views/mainPages/ContributorsPage.dart';
-import 'package:notice_board/views/mainPages/contributors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DrawerView extends StatelessWidget {
