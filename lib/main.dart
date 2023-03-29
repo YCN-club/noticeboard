@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:notice_board/viewmodels/ContributorsViewModel.dart';
 import 'package:notice_board/viewmodels/PostViewModel.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:notice_board/views/mainPages/homeScreen.dart';
@@ -15,7 +16,9 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final PostViewModel controller = Get.put(PostViewModel());
+    final ContributorsViewModel controller2 = Get.put(ContributorsViewModel());
     controller.fetchPosts();
+    controller2.getContributors();
     return  GetMaterialApp(
       debugShowCheckedModeBanner: false,
     title: 'Notice Board',

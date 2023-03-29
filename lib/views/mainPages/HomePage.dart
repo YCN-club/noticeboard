@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
             title: const Text("Manipal Notice Board"),
             actions: [
               IconButton(
-                onPressed: () => {Get.to(contributorsPage())},
+                onPressed: () => {Get.to(ContributorsPage())},
                 icon: const Icon(Icons.groups),
                 tooltip: "meet the team and contributors",
               ),
