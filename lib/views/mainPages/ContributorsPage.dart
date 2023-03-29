@@ -19,6 +19,7 @@ class ContributorsPage extends StatelessWidget {
             var currentData = controller.contributors[index];
             return ListTile(
               leading: CircleAvatar(
+                radius: 30,
                 backgroundImage: NetworkImage(currentData.avatarUrl),
               ),
               title: Text(currentData.login, style: const TextStyle(color: Colors.white),),
