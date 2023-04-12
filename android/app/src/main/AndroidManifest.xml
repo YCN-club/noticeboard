@@ -2,7 +2,7 @@
     package="com.example.notice_board">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="notice_board"
+        android:label="MAHE BLR Notice Board"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
