@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:notice_board/models/Post.dart';
 
 class DisplayPosts extends StatelessWidget {
-  final List<Post> posts;
+  final Posts posts;
   const DisplayPosts({Key? key, required this.posts}) : super(key: key);
 
   @override
@@ -12,7 +12,7 @@ class DisplayPosts extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
       ListView.builder(
-          itemCount: posts.length,
+          itemCount: posts.result.length,
           itemBuilder: (context, index) {
             return Container();
           })

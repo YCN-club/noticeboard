@@ -3,7 +3,7 @@ import 'package:notice_board/models/Post.dart';
 import 'package:notice_board/views/mainPages/infoScreen.dart';
 
 class NoticeList extends StatefulWidget {
-  final List<Post> noticeArray;
+  final Posts noticeArray;
   NoticeList(this.noticeArray);
 
   @override
@@ -15,7 +15,7 @@ class _NoticeListState extends State<NoticeList> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Column(
-            children: widget.noticeArray.map((nt) {
+            children: widget.noticeArray.result.map((nt) {
       return Card(
         color: Colors.black,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -70,7 +70,7 @@ class _NoticeListState extends State<NoticeList> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(5),
                 child: FadeInImage.assetNetwork(
-                    placeholder: 'images/loading.gif', image: nt.Image),
+                    placeholder: 'images/loading.gif', image: nt.imageUrl),
               ),
               const SizedBox(
                 height: 20,

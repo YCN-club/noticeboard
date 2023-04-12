@@ -6,7 +6,7 @@ import 'package:notice_board/models/notice.dart';
 import 'package:intl/intl.dart';
 
 class InfoScreen extends StatelessWidget {
-  Post infoNotice;
+  Result infoNotice;
 
   InfoScreen(this.infoNotice);
 
@@ -17,7 +17,7 @@ class InfoScreen extends StatelessWidget {
       body: SingleChildScrollView(
           child: Column(
         children: [
-          Image.network(infoNotice.Image),
+          Image.network(infoNotice.imageUrl),
           Column(
             children: [
               ClipRRect(
