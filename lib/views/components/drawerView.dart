@@ -68,9 +68,11 @@ class DrawerView extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 20,
-              fontWeight: FontWeight.w600,
             ),
           ),
+          onTap: () {
+            Get.to(ContributorsPage());
+          },
         ),
         ListTile(
           leading: IconButton(
@@ -82,9 +84,9 @@ class DrawerView extends StatelessWidget {
           ),
           title: const Text(
             "Feedback",
-            style: TextStyle(
-                color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),
+            style: TextStyle(color: Colors.white, fontSize: 20),
           ),
+          onTap: () => _launchURL(""),
         )
       ],
     );

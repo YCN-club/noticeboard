@@ -11,6 +11,8 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   @override
   var notificationsEnabled = false;
+  var darkModeEnabled = false;
+
   void toggleNotification(bool value) {
     setState(() {
       notificationsEnabled
@@ -19,35 +21,73 @@ class _SettingsScreenState extends State<SettingsScreen> {
     });
   }
 
+  void toggleDarkMode(bool value) {
+    setState(() {
+      darkModeEnabled ? darkModeEnabled = false : darkModeEnabled = true;
+    });
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text("Settings"),
+        title: const Text(
+          "Settings",
+          style: TextStyle(color: Colors.black),
+        ),
+        leading: const BackButton(
+          color: Colors.black,
+        ),
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                mainAxisSize: MainAxisSize.max,
+              Column(
                 children: [
-                  const Text(
-                    "Push Notifications",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      const Text(
+                        "Push Notifications",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      Switch(
+                        activeTrackColor: Colors.orange,
+                        activeColor: Colors.orange,
+                        inactiveTrackColor: Colors.grey,
+                        value: notificationsEnabled,
+                        onChanged: toggleNotification,
+                      )
+                    ],
                   ),
-                  Switch(
-                    activeTrackColor: Colors.orange,
-                    activeColor: Colors.orange,
-                    inactiveTrackColor: Colors.grey,
-                    value: notificationsEnabled,
-                    onChanged: toggleNotification,
-                  )
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      const Text(
+                        "Dark Mode",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      Switch(
+                        activeTrackColor: Colors.orange,
+                        activeColor: Colors.orange,
+                        inactiveTrackColor: Colors.grey,
+                        value: darkModeEnabled,
+                        onChanged: toggleDarkMode,
+                      )
+                    ],
+                  ),
                 ],
               ),
               Column(

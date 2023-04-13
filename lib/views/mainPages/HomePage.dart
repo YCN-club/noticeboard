@@ -13,9 +13,41 @@ class HomePage extends StatelessWidget {
     return GetX<PostViewModel>(builder: (controller) {
       return Scaffold(
           backgroundColor: Colors.black,
-          floatingActionButton: FloatingActionButton(
-            onPressed: controller.fetchPosts,
-            child: Icon(Icons.replay_outlined),
+          floatingActionButton: Wrap(
+            //will break to another line on overflow
+            direction: Axis.horizontal, //use vertical to show  on vertical axis
+            children: <Widget>[
+              Container(
+                  margin: EdgeInsets.all(10),
+                  child: FloatingActionButton(
+                    onPressed: () {
+                      //action code for button 1
+                    },
+                    child: Icon(Icons.add),
+                  )), //button first
+
+              Container(
+                  margin: EdgeInsets.all(10),
+                  child: FloatingActionButton(
+                    onPressed: () {
+                      //action code for button 2
+                    },
+                    backgroundColor: Colors.deepPurpleAccent,
+                    child: Icon(Icons.add),
+                  )), // button second
+
+              Container(
+                  margin: EdgeInsets.all(10),
+                  child: FloatingActionButton(
+                    onPressed: () {
+                      //action code for button 3
+                    },
+                    backgroundColor: Colors.deepOrangeAccent,
+                    child: Icon(Icons.add),
+                  )), // button third
+
+              // Add more buttons here
+            ],
           ),
           appBar: AppBar(
             shape: const Border(

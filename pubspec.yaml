@@ -46,6 +46,9 @@ dependencies:
   flutter_dotenv: ^5.0.2
   webview_flutter: ^4.0.5
   flutter_launcher_icons: ^0.12.0
+  cached_network_image: ^3.2.3
+  shared_preferences: ^2.1.0
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +74,21 @@ flutter:
     - images/placeholder.jpg
     - images/loading.gif
     - images/cxlogo.png
+    - images/cxLogoColor.png
+    - images/icons/instagram.png
+    - images/icons/facebook.png
+    - images/icons/github.png
+    - images/icons/linkedin.png
+    - images/icons/whatsapp.png
+    - images/icons/discord.png
+
+  fonts:
+    - family: Lufga
+      fonts:
+        - asset : fonts/LufgaBold.ttf
+        - asset : fonts/LufgaMedium.ttf
+        - asset : fonts/LufgaRegular.ttf
+
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
