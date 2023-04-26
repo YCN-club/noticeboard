@@ -13,9 +13,41 @@ class HomePage extends StatelessWidget {
     return GetX<PostViewModel>(builder: (controller) {
       return Scaffold(
           backgroundColor: Colors.black,
-          floatingActionButton: FloatingActionButton(
-            onPressed: controller.fetchPosts,
-            child: Icon(Icons.replay_outlined),
+          floatingActionButton: Wrap(
+            //will break to another line on overflow
+            direction: Axis.horizontal, //use vertical to show  on vertical axis
+            children: <Widget>[
+              Container(
+                  margin: EdgeInsets.all(10),
+                  child: FloatingActionButton(
+                    onPressed: () {
+                      //action code for button 1
+                    },
+                    child: Icon(Icons.add),
+                  )), //button first
+
+              Container(
+                  margin: EdgeInsets.all(10),
+                  child: FloatingActionButton(
+                    onPressed: () {
+                      //action code for button 2
+                    },
+                    backgroundColor: Colors.deepPurpleAccent,
+                    child: Icon(Icons.add),
+                  )), // button second
+
+              Container(
+                  margin: EdgeInsets.all(10),
+                  child: FloatingActionButton(
+                    onPressed: () {
+                      //action code for button 3
+                    },
+                    backgroundColor: Colors.deepOrangeAccent,
+                    child: Icon(Icons.add),
+                  )), // button third
+
+              // Add more buttons here
+            ],
           ),
           appBar: AppBar(
             shape: const Border(
@@ -51,18 +83,18 @@ class HomePage extends StatelessWidget {
                           child: SizedBox(
                               width: 300.0,
                               child: ListView.builder(
-                                  itemCount: controller.posts.isNotEmpty
-                                      ? controller.posts.length
+                                  itemCount: controller.posts.value.result.isNotEmpty
+                                      ? controller.posts.value.result.length
                                       : 0,
                                   itemBuilder: ((context, index) {
-                                    var currentData = controller.posts[index];
+                                    var currentData = controller.posts.value.result[index];
                                     return PostCard(
                                       title: currentData.title,
                                       description: currentData.shortDescription,
-                                      startDateTime: currentData.startDateTime,
-                                      endDateTime: currentData.endDateTime,
-                                      publishedAt: currentData.updatedAt,
-                                      image: currentData.Image,
+                                      startDateTime: currentData.startTime.toIso8601String(),
+                                      endDateTime: currentData.endTime.toIso8601String(),
+                                      publishedAt: currentData.publishedAt.toIso8601String(),
+                                      image: currentData.imageUrl,
                                     );
                                     // return ListTile(
                                     //   title: Text(currentData.title),

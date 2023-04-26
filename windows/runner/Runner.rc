@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "notice_board" "\0"
+            VALUE "FileDescription", "MAHE BLR Notice Board" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "notice_board" "\0"
+            VALUE "InternalName", "MAHE BLR Notice Board" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
             VALUE "OriginalFilename", "notice_board.exe" "\0"
-            VALUE "ProductName", "notice_board" "\0"
+            VALUE "ProductName", "MAHE BLR Notice Board" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

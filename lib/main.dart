@@ -4,6 +4,7 @@ import 'package:notice_board/viewmodels/ContributorsViewModel.dart';
 import 'package:notice_board/viewmodels/PostViewModel.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:notice_board/views/mainPages/homeScreen.dart';
+import 'models/darkThemeProvider.dart';
 
 void main(List<String> args) async {
   await dotenv.load(fileName: ".env");
@@ -19,12 +20,12 @@ class MainApp extends StatelessWidget {
     final ContributorsViewModel controller2 = Get.put(ContributorsViewModel());
     controller.fetchPosts();
     controller2.getContributors();
-    return  GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-    title: 'Notice Board',
-      theme: ThemeData(primarySwatch: primaryBlack),
-    home: const HomeScreen(),
-  );  
+      title: 'Notice Board',
+      theme: ThemeData(primarySwatch: primaryBlack, fontFamily: "Lufga"),
+      home: const HomeScreen(),
+    );
   }
 }
 

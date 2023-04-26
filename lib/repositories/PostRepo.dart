@@ -36,7 +36,6 @@ class PostRepo {
 
   //   return {"name": "your mum"};
   // }
-  static const String _baseUrl = 'https://api.notion.com/v1/';
 
   final _client = http.Client();
 
@@ -44,40 +43,19 @@ class PostRepo {
     _client.close(); //Always close HTTP clients after using them.
   }
 
-  Future<List<Post>> getPosts() async {
+  Future<Posts> getPosts() async {
     try {
-      var url = '${_baseUrl}databases/${dotenv.env['NOTION_DATABASE']}/query';
-      var response = await _client.post(Uri.parse(url), headers: {
-        HttpHeaders.authorizationHeader:
-            'Bearer ${dotenv.env['NOTION_SECRET']}',
-        'Notion-Version': '2022-02-22',
-        'accept': 'application/json',
-        'Content-Type': 'application/json',
-      }, body: jsonEncode({
-        "filter": {
-          "property": "published",
-          "checkbox": {"equals": true}
-        }
-      }));
+      var url =
+          'https://77w5symg.api.sanity.io/v2021-10-21/data/query/production?query=*%5BPublished%20%3D%3D%20true%5D%7B%0A...%2C%0A%20%20%22ImageUrl%22%3A%20mainImage.asset%20-%3E%20url%0A%20%20%0A%7D';
+      var response = await _client.get(Uri.parse(url));
+
       if (response.statusCode == 200) {
-        final data = jsonDecode(response.body) as Map<String, dynamic>;
-        return (data['results'] as List).map((e) => Post.fromMap(e)).toList();
+        return postsFromJson(response.body);
       }
     } catch (_) {
       print(_.toString());
       print("ayoooo something went wrong");
     }
-    return [
-      const Post(
-          title: "",
-          shortDescription: "",
-          longDescription: "",
-          startDateTime: "",
-          endDateTime: "",
-          uid: "",
-          createdAt: "",
-          updatedAt: "",
-          Image: "")
-    ];
+    return Posts(ms: 0, query: "", result: []);
   }
 }

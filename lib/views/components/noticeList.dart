@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:notice_board/models/Post.dart';
 import 'package:notice_board/views/mainPages/infoScreen.dart';
 
 class NoticeList extends StatefulWidget {
-  final List<Post> noticeArray;
+  final Posts noticeArray;
   NoticeList(this.noticeArray);
 
   @override
@@ -15,94 +16,82 @@ class _NoticeListState extends State<NoticeList> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Column(
-            children: widget.noticeArray.map((nt) {
+            children: widget.noticeArray.result.map((nt) {
       return Card(
-        color: Colors.black,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        color: Colors.white,
+        elevation: 1,
+        shadowColor: Colors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         child: Padding(
           padding: const EdgeInsets.all(12.0),
-          child: Column(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  // IconButton(
-                  //     onPressed: () {
-                  //       setState(() {
-                  //         nt.unread ? nt.unread = false : nt.unread = true;
-                  //       });
-                  //     },
-                  //     icon: Icon(
-                  //       nt.unread
-                  //           ? Icons.mark_email_unread
-                  //           : Icons.mark_email_read,
-                  //       color: nt.unread ? Colors.orange : Colors.grey,
-                  //     )),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          nt.title,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              letterSpacing: -0.6,
-                              color: Colors.white),
-                        ),
-                        // Text(
-                        //   DateFormat.yMMMd().format(nt.startDateTime),
-                        //   style: const TextStyle(
-                        //       fontWeight: FontWeight.bold,
-                        //       fontSize: 12,
-                        //       letterSpacing: -0.6,
-                        //       color: Colors.grey),
-                        // ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
               ClipRRect(
-                borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(10),
                 child: FadeInImage.assetNetwork(
-                    placeholder: 'images/loading.gif', image: nt.Image),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Text(
-                nt.shortDescription,
-                style: const TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 15,
-                  color: Colors.white,
+                  width: 150,
+                  placeholder: 'images/loading.gif',
+                  image: nt.imageUrl,
                 ),
               ),
-              const SizedBox(
-                height: 10,
+              SizedBox(
+                width: 20,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  OutlinedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => InfoScreen(nt)));
-                    },
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.orange)),
-                    child: const Text("Read More"),
-                  ),
-                ],
-              )
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      nt.title,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                          letterSpacing: -0.6,
+                          color: Colors.black),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      nt.shortDescription,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        OutlinedButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => InfoScreen(nt)));
+                            HapticFeedback.heavyImpact();
+                          },
+                          style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                ),
+                              ),
+                              enableFeedback: true,
+                              foregroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.white),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.orange)),
+                          child: const Text("Read More"),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ),

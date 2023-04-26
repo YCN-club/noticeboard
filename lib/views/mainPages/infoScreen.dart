@@ -6,70 +6,120 @@ import 'package:notice_board/models/notice.dart';
 import 'package:intl/intl.dart';
 
 class InfoScreen extends StatelessWidget {
-  Post infoNotice;
+  Result infoNotice;
 
   InfoScreen(this.infoNotice);
+
+  final tagsList = ["Solstice Fest", "Events", "News", "Student Council"];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        shadowColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
+        leading: const BackButton(
+          color: Colors.black,
+        ),
+      ),
       body: SingleChildScrollView(
-          child: Column(
-        children: [
-          Image.network(infoNotice.Image),
-          Column(
-            children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20)),
-                child: Container(
-                  color: Colors.white,
-                  width: MediaQuery.of(context).size.width,
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          infoNotice.title,
-                          style: const TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: -1),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        // Text(
-                        //   DateFormat.yMMMd().format(infoNotice.date),
-                        //   style: const TextStyle(
-                        //       color: Colors.grey,
-                        //       fontSize: 17,
-                        //       fontWeight: FontWeight.w600,
-                        //       letterSpacing: -1),
-                        // ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          infoNotice.longDescription,
-                          style: const TextStyle(
-                              color: Colors.grey,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: -1),
-                        ),
-                      ],
-                    ),
+          child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  infoNotice.title,
+                  style: const TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: -1),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  "Published on ${infoNotice.date.day}/${infoNotice.date.month}/${infoNotice.date.year}",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500, color: Colors.grey),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.network(
+                infoNotice.imageUrl,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Text(
+                //   DateFormat.yMMMd().format(infoNotice.date),
+                //   style: const TextStyle(
+                //       color: Colors.grey,
+                //       fontSize: 17,
+                //       fontWeight: FontWeight.w600,
+                //       letterSpacing: -1),
+                // ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  infoNotice.longDescription,
+                  style: TextStyle(
+                    color: Colors.grey[700],
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal,
                   ),
                 ),
-              ),
-            ],
-          )
-        ],
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  "TAGS",
+                  style: TextStyle(color: Colors.grey),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: infoNotice.tags.map((tag) {
+                      return SizedBox(
+                        child: Card(
+                          color: Colors.orange,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(7.0),
+                            child: Text(
+                              tag,
+                              style: const TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
       )),
     );
   }
