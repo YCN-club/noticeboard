@@ -3,7 +3,7 @@ import 'package:notice_board/models/Post.dart';
 import 'package:notice_board/views/mainPages/infoScreen.dart';
 
 class NoticeList extends StatefulWidget {
-  final List<Post> noticeArray;
+  final Posts noticeArray;
   NoticeList(this.noticeArray);
 
   @override
@@ -15,7 +15,7 @@ class _NoticeListState extends State<NoticeList> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Column(
-            children: widget.noticeArray.map((nt) {
+            children: widget.noticeArray.result.map((nt) {
       return Card(
         color: Colors.white,
         elevation: 1,
@@ -31,7 +31,7 @@ class _NoticeListState extends State<NoticeList> {
                 child: FadeInImage.assetNetwork(
                   width: 150,
                   placeholder: 'images/loading.gif',
-                  image: nt.Image,
+                  image: nt.imageUrl,
                 ),
               ),
               SizedBox(

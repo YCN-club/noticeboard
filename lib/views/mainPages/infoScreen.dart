@@ -6,7 +6,7 @@ import 'package:notice_board/models/notice.dart';
 import 'package:intl/intl.dart';
 
 class InfoScreen extends StatelessWidget {
-  Post infoNotice;
+  Result infoNotice;
 
   InfoScreen(this.infoNotice);
 
@@ -53,7 +53,7 @@ class InfoScreen extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.network(
-                infoNotice.Image,
+                infoNotice.imageUrl,
               ),
             ),
             SizedBox(
