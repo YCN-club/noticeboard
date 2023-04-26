@@ -87,7 +87,23 @@ class DrawerView extends StatelessWidget {
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
           onTap: () => _launchURL(""),
-        )
+        ),
+        SizedBox(
+          height: 50,
+        ),
+        Column(
+          children: const [
+            Text(
+              "Brought to you by CodeX MIT-BLR",
+              style: TextStyle(color: Colors.grey),
+            ),
+            Image(
+              image: AssetImage("images/cxlogo.png"),
+              width: 200,
+              height: 100,
+            ),
+          ],
+        ),
       ],
     );
   }

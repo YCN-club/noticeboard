@@ -26,6 +26,7 @@ class InfoScreen extends StatelessWidget {
           child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +42,7 @@ class InfoScreen extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                  "Published on 12th April, 2023",
+                  "Published on ${infoNotice.date.day}/${infoNotice.date.month}/${infoNotice.date.year}",
                   style: TextStyle(
                       fontWeight: FontWeight.w500, color: Colors.grey),
                 ),
@@ -81,35 +82,35 @@ class InfoScreen extends StatelessWidget {
                     fontWeight: FontWeight.normal,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   "TAGS",
                   style: TextStyle(color: Colors.grey),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: tagsList.map((tag) {
+                    children: infoNotice.tags.map((tag) {
                       return SizedBox(
                         child: Card(
                           color: Colors.orange,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18)),
                           child: Padding(
                             padding: const EdgeInsets.all(7.0),
                             child: Text(
                               tag,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.white),
                             ),
                           ),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18)),
                         ),
                       );
                     }).toList(),

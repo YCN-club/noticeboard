@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:notice_board/models/Post.dart';
 import 'package:notice_board/views/mainPages/infoScreen.dart';
 
@@ -70,6 +71,7 @@ class _NoticeListState extends State<NoticeList> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => InfoScreen(nt)));
+                            HapticFeedback.heavyImpact();
                           },
                           style: ButtonStyle(
                               shape: MaterialStateProperty.all<

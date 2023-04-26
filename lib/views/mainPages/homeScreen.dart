@@ -6,6 +6,7 @@ import 'package:notice_board/views/mainPages/settingsScreen.dart';
 import '../../models/notice.dart';
 import '../components/noticeList.dart';
 import '../components/drawerView.dart';
+import 'package:flutter/services.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -94,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return GetX<PostViewModel>(builder: (controller) {
       return Scaffold(
         floatingActionButton: Wrap(
-          direction: Axis.vertical,
+          direction: Axis.horizontal,
           children: <Widget>[
             Container(
                 margin: EdgeInsets.all(10),
@@ -104,6 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => ClubInfoPage()));
+                    HapticFeedback.heavyImpact();
                   },
                   backgroundColor: Colors.white,
                   child: Image(image: AssetImage("images/cxLogoColor.png")),
@@ -114,6 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: FloatingActionButton(
                   onPressed: () {
                     controller.fetchPosts();
+                    HapticFeedback.heavyImpact();
                   },
                   backgroundColor: Colors.white,
                   child: Icon(
@@ -132,20 +135,20 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
-          actions: [
-            IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SettingsScreen(),
-                  ),
-                );
-              },
-              icon: const Icon(Icons.settings),
-              color: Colors.black,
-            )
-          ],
+          // actions: [
+          //   IconButton(
+          //     onPressed: () {
+          //       Navigator.push(
+          //         context,
+          //         MaterialPageRoute(
+          //           builder: (context) => const SettingsScreen(),
+          //         ),
+          //       );
+          //     },
+          //     icon: const Icon(Icons.settings),
+          //     color: Colors.black,
+          //   )
+          // ],
         ),
         body: NoticeList(controller.posts.value),
         drawer: const Drawer(

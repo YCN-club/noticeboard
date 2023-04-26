@@ -48,7 +48,7 @@ class PostRepo {
       var url =
           'https://77w5symg.api.sanity.io/v2021-10-21/data/query/production?query=*%5BPublished%20%3D%3D%20true%5D%7B%0A...%2C%0A%20%20%22ImageUrl%22%3A%20mainImage.asset%20-%3E%20url%0A%20%20%0A%7D';
       var response = await _client.get(Uri.parse(url));
-     
+
       if (response.statusCode == 200) {
         return postsFromJson(response.body);
       }
