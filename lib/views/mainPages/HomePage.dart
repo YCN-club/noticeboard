@@ -95,10 +95,7 @@ class HomePage extends StatelessWidget {
                                       endDateTime: currentData.endTime.toIso8601String(),
                                       publishedAt: currentData.publishedAt.toIso8601String(),
                                       image: currentData.imageUrl,
-                                    );
-                                    // return ListTile(
-                                    //   title: Text(currentData.title),
-                                    // );
+                                    ); 
                                   }))))
                     ])
               ],

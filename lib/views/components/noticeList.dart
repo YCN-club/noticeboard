@@ -35,7 +35,7 @@ class _NoticeListState extends State<NoticeList> {
                   image: nt.imageUrl,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               Expanded(

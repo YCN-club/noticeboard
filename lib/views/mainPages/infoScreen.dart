@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:notice_board/models/Post.dart';
-import 'package:notice_board/models/notice.dart';
 import 'package:intl/intl.dart';
 
 class InfoScreen extends StatelessWidget {

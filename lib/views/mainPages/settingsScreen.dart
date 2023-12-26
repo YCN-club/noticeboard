@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -90,8 +89,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                 ],
               ),
-              Column(
-                children: const [
+              const Column(
+                children: [
                   Text(
                     "Brought to you by CodeX MIT-BLR",
                     style: TextStyle(color: Colors.grey),
