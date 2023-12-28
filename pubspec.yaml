@@ -34,6 +34,7 @@ dependencies:
   path: any
   intl: ^0.18.0
   url_launcher: ^6.1.9
+  google_nav_bar: ^5.0.6
 
 
 
