@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:notice_board/viewmodels/ContributorsViewModel.dart';
 import 'package:notice_board/viewmodels/PostViewModel.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:notice_board/views/mainPages/TabNavigator.dart';
 import 'package:notice_board/views/mainPages/homeScreen.dart';
 import 'models/darkThemeProvider.dart';
 
@@ -21,11 +22,10 @@ class MainApp extends StatelessWidget {
     controller.fetchPosts();
     controller2.getContributors();
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Notice Board',
-      theme: ThemeData(primarySwatch: primaryBlack, fontFamily: "Lufga"),
-      home: const HomeScreen(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Notice Board',
+        theme: ThemeData(primarySwatch: primaryBlack, fontFamily: "Lufga"),
+        home: TabNavigator());
   }
 }
 
