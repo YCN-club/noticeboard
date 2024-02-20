@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/route_manager.dart';
 import 'package:notice_board/views/mainPages/ContributorsPage.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -33,24 +31,9 @@ class DrawerView extends StatelessWidget {
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.4), BlendMode.darken))),
-          child: Column(
+          child: const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              // Text(
-              //   "Kevin Thomas",
-              //   style: TextStyle(
-              //       color: Colors.white,
-              //       fontSize: 25,
-              //       fontWeight: FontWeight.w600),
-              // ),
-              // Text(
-              //   "kevin1.mitblr2022@learner.manipal.edu",
-              //   style: TextStyle(
-              //       color: Colors.white,
-              //       fontSize: 12,
-              //       fontWeight: FontWeight.w500),
-              // ),
-            ],
+            children: [],
           ),
         ),
         ListTile(
@@ -88,11 +71,11 @@ class DrawerView extends StatelessWidget {
           ),
           onTap: () => _launchURL(""),
         ),
-        SizedBox(
+       const SizedBox(
           height: 50,
         ),
-        Column(
-          children: const [
+        const Column(
+          children: [
             Text(
               "Brought to you by CodeX MIT-BLR",
               style: TextStyle(color: Colors.grey),
