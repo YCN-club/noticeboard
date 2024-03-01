@@ -24,7 +24,7 @@ class _TabNavigatorState extends State<TabNavigator> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 18),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 18),
         color: Colors.black,
         child: GNav(
           color: Colors.white,

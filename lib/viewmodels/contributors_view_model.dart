@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:notice_board/models/contributorObject.dart';
+import 'package:notice_board/models/contributor.dart';
 import 'package:notice_board/repositories/contributors_repo.dart';
 
 class ContributorsViewModel extends GetxController {

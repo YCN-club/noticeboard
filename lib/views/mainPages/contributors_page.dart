@@ -4,7 +4,7 @@ import 'package:notice_board/viewmodels/contributors_view_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContributorsPage extends StatelessWidget {
-  const ContributorsPage({Key? key}) : super(key: key);
+  const ContributorsPage({super.key});
 
   _launchURLGithub(String url) async {
     final uri = Uri.parse(url);

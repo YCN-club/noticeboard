@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:notice_board/models/Department.dart';
+import 'package:notice_board/models/department.dart';
 
 class ClubInfoPage extends StatelessWidget {
   ClubInfoPage({super.key});
 
-  _launchURLGithub(String url) async {
+  _launchURL(String url) async {
     final uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
@@ -35,7 +33,7 @@ class ClubInfoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "About CodeX",
           style: TextStyle(color: Colors.black),
         ),
@@ -57,12 +55,11 @@ class ClubInfoPage extends StatelessWidget {
               ),
               ElevatedButton.icon(
                   onPressed: () {
-                    _launchURLGithub(
-                        "https://linktr.ee/CodeXmitb?fbclid=PAAaZRlBJzUdmpJyvdMh1NPFzyOmcS04tHldmILCHpRk0tX5QmEdPv_TdG_T8");
+                    _launchURL("https://codex.mitblr.club");
                   },
-                  icon: Icon(Icons.link),
-                  label: Text("Social Media")),
-              SizedBox(
+                  icon: const Icon(Icons.link),
+                  label: const Text("Social Media")),
+              const SizedBox(
                 height: 20,
               ),
               const Text(
@@ -70,8 +67,8 @@ class ClubInfoPage extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.black, fontSize: 15),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 15, 0, 8),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(0, 15, 0, 8),
                 child: Text(
                   "Our Departments",
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
@@ -94,7 +91,7 @@ class ClubInfoPage extends StatelessWidget {
                               Text(department.name),
                               Text(
                                 department.head,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.grey,
                                     fontSize: 12,
                                     fontWeight: FontWeight.w500),

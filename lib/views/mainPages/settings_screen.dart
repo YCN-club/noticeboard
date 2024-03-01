@@ -7,7 +7,6 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  @override
   var notificationsEnabled = false;
   var darkModeEnabled = false;
 
@@ -25,6 +24,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,

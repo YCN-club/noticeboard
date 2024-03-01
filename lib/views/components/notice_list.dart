@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:notice_board/models/Post.dart';
+import 'package:notice_board/models/post.dart';
 import 'package:notice_board/views/mainPages/info_screen.dart';
 
 class NoticeList extends StatefulWidget {
   final Posts noticeArray;
-  const NoticeList(this.noticeArray);
+  const NoticeList({super.key, required this.noticeArray});
 
   @override
   State<NoticeList> createState() => _NoticeListState();
@@ -70,7 +70,9 @@ class _NoticeListState extends State<NoticeList> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => InfoScreen(nt)));
+                                    builder: (context) => InfoScreen(
+                                          infoNotice: nt,
+                                        )));
                             HapticFeedback.heavyImpact();
                           },
                           style: ButtonStyle(

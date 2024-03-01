@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:notice_board/models/Post.dart';
-import 'package:intl/intl.dart';
+import 'package:notice_board/models/post.dart';
 
 class InfoScreen extends StatelessWidget {
-  Result infoNotice;
+  final Result infoNotice;
 
-  InfoScreen(this.infoNotice);
+  InfoScreen({super.key, required this.infoNotice});
 
   final tagsList = ["Solstice Fest", "Events", "News", "Student Council"];
 
@@ -37,12 +34,12 @@ class InfoScreen extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       letterSpacing: -1),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Text(
                   "Published on ${infoNotice.date.day}/${infoNotice.date.month}/${infoNotice.date.year}",
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontWeight: FontWeight.w500, color: Colors.grey),
                 ),
                 const SizedBox(
@@ -56,7 +53,7 @@ class InfoScreen extends StatelessWidget {
                 infoNotice.imageUrl,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Column(

@@ -8,8 +8,6 @@ class Styles {
       backgroundColor: isDarkTheme ? Colors.black : const Color(0xffF1F5FB),
       indicatorColor:
           isDarkTheme ? const Color(0xff0E1D36) : const Color(0xffCBDCF8),
-      buttonColor:
-          isDarkTheme ? const Color(0xff3B3B3B) : const Color(0xffF1F5FB),
       hintColor:
           isDarkTheme ? const Color(0xff280C0B) : const Color(0xffEECED3),
       highlightColor:

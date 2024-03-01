@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class PostCard extends StatelessWidget {
   final String title,
@@ -9,14 +8,13 @@ class PostCard extends StatelessWidget {
       publishedAt,
       image;
   const PostCard(
-      {Key? key,
+      {super.key,
       required this.title,
       required this.description,
       required this.startDateTime,
       required this.endDateTime,
       required this.publishedAt,
-      required this.image})
-      : super(key: key);
+      required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +23,13 @@ class PostCard extends StatelessWidget {
     return Card(
       elevation: 10.0,
       child: Column(children: [
-        image != null
-            ? FadeInImage.assetNetwork(
-                placeholder: 'images/placeholder.jpeg', image: image)
-            : Image.network(""),
+        FadeInImage.assetNetwork(
+            placeholder: 'images/placeholder.jpeg', image: image),
         ListTile(
           title: Text(title),
           subtitle: Text(description),
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             // Text(

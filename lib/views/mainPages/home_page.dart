@@ -6,7 +6,7 @@ import 'package:notice_board/views/mainPages/contributors_page.dart';
 import 'package:notice_board/views/mainPages/feedback_page.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,32 +18,32 @@ class HomePage extends StatelessWidget {
             direction: Axis.horizontal, //use vertical to show  on vertical axis
             children: <Widget>[
               Container(
-                  margin: EdgeInsets.all(10),
+                  margin: const EdgeInsets.all(10),
                   child: FloatingActionButton(
                     onPressed: () {
                       //action code for button 1
                     },
-                    child: Icon(Icons.add),
+                    child: const Icon(Icons.add),
                   )), //button first
 
               Container(
-                  margin: EdgeInsets.all(10),
+                  margin: const EdgeInsets.all(10),
                   child: FloatingActionButton(
                     onPressed: () {
                       //action code for button 2
                     },
                     backgroundColor: Colors.deepPurpleAccent,
-                    child: Icon(Icons.add),
+                    child: const Icon(Icons.add),
                   )), // button second
 
               Container(
-                  margin: EdgeInsets.all(10),
+                  margin: const EdgeInsets.all(10),
                   child: FloatingActionButton(
                     onPressed: () {
                       //action code for button 3
                     },
                     backgroundColor: Colors.deepOrangeAccent,
-                    child: Icon(Icons.add),
+                    child: const Icon(Icons.add),
                   )), // button third
 
               // Add more buttons here
@@ -60,12 +60,12 @@ class HomePage extends StatelessWidget {
             title: const Text("Manipal Notice Board"),
             actions: [
               IconButton(
-                onPressed: () => {Get.to(ContributorsPage())},
+                onPressed: () => {Get.to(const ContributorsPage())},
                 icon: const Icon(Icons.groups),
                 tooltip: "meet the team and contributors",
               ),
               IconButton(
-                onPressed: () => {Get.to(FeedbackPage())},
+                onPressed: () => {Get.to(const FeedbackPage())},
                 icon: const Icon(Icons.feedback),
                 tooltip: "Send us your ideas and feedback",
               ),

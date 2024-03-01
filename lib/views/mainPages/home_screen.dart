@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:notice_board/viewmodels/post_view_model.dart';
 import 'package:notice_board/views/mainPages/club_info_page.dart';
 import '../components/notice_list.dart';
@@ -38,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       const Image(image: AssetImage("images/cxLogoColor.png")),
                 )),
             Container(
-                margin: EdgeInsets.all(10),
+                margin: const EdgeInsets.all(10),
                 child: FloatingActionButton(
                   onPressed: () {
                     controller.fetchPosts();
@@ -54,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.black),
+          iconTheme: const IconThemeData(color: Colors.black),
           title: const Text(
             "MAHE Bangalore Notice Board",
             style: TextStyle(color: Colors.black, fontSize: 17),
@@ -62,7 +61,9 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
         ),
-        body: NoticeList(controller.posts.value),
+        body: NoticeList(
+          noticeArray: controller.posts.value,
+        ),
         drawer: const Drawer(
           backgroundColor: Colors.black,
           child: DrawerView(),
