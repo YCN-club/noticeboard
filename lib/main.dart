@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:notice_board/viewmodels/contributors_view_model.dart';
 import 'package:notice_board/viewmodels/post_view_model.dart';
-import 'package:notice_board/views/mainPages/TabNavigator.dart';
+import 'package:notice_board/views/mainPages/tab_navigator.dart';
 
 void main(List<String> args) async {
   runApp(const MainApp());
