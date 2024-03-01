@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:notice_board/viewmodels/PostViewModel.dart';
-import 'package:notice_board/views/mainPages/ClubInfoPage.dart';
-import '../components/noticeList.dart';
-import '../components/drawerView.dart';
+import 'package:notice_board/viewmodels/post_view_model.dart';
+import 'package:notice_board/views/mainPages/club_info_page.dart';
+import '../components/notice_list.dart';
+import '../components/drawer_view.dart';
 import 'package:flutter/services.dart';
 
 class HomeScreen extends StatefulWidget {

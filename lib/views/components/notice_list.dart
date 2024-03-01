@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:notice_board/models/Post.dart';
-import 'package:notice_board/views/mainPages/infoScreen.dart';
+import 'package:notice_board/views/mainPages/info_screen.dart';
 
 class NoticeList extends StatefulWidget {
   final Posts noticeArray;
-  NoticeList(this.noticeArray);
+  const NoticeList(this.noticeArray);
 
   @override
   State<NoticeList> createState() => _NoticeListState();

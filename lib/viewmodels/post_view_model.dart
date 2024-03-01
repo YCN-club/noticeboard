@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:notice_board/models/Post.dart';
-import 'package:notice_board/repositories/PostRepo.dart';
+import 'package:notice_board/repositories/post_repo.dart';
 
 class PostViewModel extends GetxController {
   final PostRepo _repo = PostRepo();

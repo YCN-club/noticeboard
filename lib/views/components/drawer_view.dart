@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:notice_board/views/mainPages/ContributorsPage.dart';
+import 'package:notice_board/views/mainPages/contributors_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DrawerView extends StatelessWidget {
@@ -71,7 +71,7 @@ class DrawerView extends StatelessWidget {
           ),
           onTap: () => _launchURL(""),
         ),
-       const SizedBox(
+        const SizedBox(
           height: 50,
         ),
         const Column(

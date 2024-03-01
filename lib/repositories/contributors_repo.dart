@@ -1,13 +1,10 @@
-import 'package:get/route_manager.dart';
 import 'package:http/http.dart';
-import 'package:notice_board/views/components/contributorsList.dart';
-import 'package:notice_board/views/mainPages/FeedbackPage.dart';
 import 'package:notice_board/models/contributorObject.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:convert';
 
-class ContributorsRepo{
-   Future getApiData() async {
+class ContributorsRepo {
+  Future getApiData() async {
     var url = Uri.parse(
         "https://api.github.com/repos/CodeX-MIT-BLR/NoticeBoard/contributors");
     Response response = await get(url);
@@ -31,5 +28,4 @@ class ContributorsRepo{
       throw "Can not launch url";
     }
   }
-
 }

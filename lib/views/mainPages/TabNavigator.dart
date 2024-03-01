@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'homeScreen.dart';
+import 'home_screen.dart';
 
 class TabNavigator extends StatefulWidget {
   const TabNavigator({super.key});

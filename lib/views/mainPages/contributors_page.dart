@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:notice_board/viewmodels/ContributorsViewModel.dart';
+import 'package:notice_board/viewmodels/contributors_view_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContributorsPage extends StatelessWidget {
-  ContributorsPage({Key? key}) : super(key: key);
+  const ContributorsPage({Key? key}) : super(key: key);
 
   _launchURLGithub(String url) async {
     final uri = Uri.parse(url);
@@ -42,8 +42,8 @@ class ContributorsPage extends StatelessWidget {
                   onPressed: () {
                     _launchURLGithub(currentData.htmlUrl);
                   },
-                  icon: Icon(Icons.open_in_new),
-                  label: Text("GitHub"),
+                  icon: const Icon(Icons.open_in_new),
+                  label: const Text("GitHub"),
                 ),
                 leading: CircleAvatar(
                   backgroundImage: NetworkImage(currentData.avatarUrl),

@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:notice_board/viewmodels/ContributorsViewModel.dart';
-import 'package:notice_board/viewmodels/PostViewModel.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:notice_board/viewmodels/contributors_view_model.dart';
+import 'package:notice_board/viewmodels/post_view_model.dart';
 import 'package:notice_board/views/mainPages/TabNavigator.dart';
-import 'package:notice_board/views/mainPages/homeScreen.dart';
-import 'models/darkThemeProvider.dart';
 
 void main(List<String> args) async {
-  await dotenv.load(fileName: ".env");
   runApp(const MainApp());
 }
 
@@ -25,7 +21,7 @@ class MainApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Notice Board',
         theme: ThemeData(primarySwatch: primaryBlack, fontFamily: "Lufga"),
-        home: TabNavigator());
+        home: const TabNavigator());
   }
 }
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:notice_board/viewmodels/PostViewModel.dart';
-import 'package:notice_board/views/components/PostCard.dart';
-import 'package:notice_board/views/mainPages/ContributorsPage.dart';
-import 'package:notice_board/views/mainPages/FeedbackPage.dart';
+import 'package:notice_board/viewmodels/post_view_model.dart';
+import 'package:notice_board/views/components/post_card.dart';
+import 'package:notice_board/views/mainPages/contributors_page.dart';
+import 'package:notice_board/views/mainPages/feedback_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -83,19 +83,24 @@ class HomePage extends StatelessWidget {
                           child: SizedBox(
                               width: 300.0,
                               child: ListView.builder(
-                                  itemCount: controller.posts.value.result.isNotEmpty
-                                      ? controller.posts.value.result.length
-                                      : 0,
+                                  itemCount:
+                                      controller.posts.value.result.isNotEmpty
+                                          ? controller.posts.value.result.length
+                                          : 0,
                                   itemBuilder: ((context, index) {
-                                    var currentData = controller.posts.value.result[index];
+                                    var currentData =
+                                        controller.posts.value.result[index];
                                     return PostCard(
                                       title: currentData.title,
                                       description: currentData.shortDescription,
-                                      startDateTime: currentData.startTime.toIso8601String(),
-                                      endDateTime: currentData.endTime.toIso8601String(),
-                                      publishedAt: currentData.publishedAt.toIso8601String(),
+                                      startDateTime: currentData.startTime
+                                          .toIso8601String(),
+                                      endDateTime:
+                                          currentData.endTime.toIso8601String(),
+                                      publishedAt: currentData.publishedAt
+                                          .toIso8601String(),
                                       image: currentData.imageUrl,
-                                    ); 
+                                    );
                                   }))))
                     ])
               ],
