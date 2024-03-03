@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:noticeboard/models/post.dart';
-import 'package:noticeboard/views/mainPages/info_screen.dart';
+import 'package:noticeboard/views/info_screen.dart';
 
 class NoticeList extends StatefulWidget {
   final Posts noticeArray;
@@ -31,7 +31,7 @@ class _NoticeListState extends State<NoticeList> {
                 borderRadius: BorderRadius.circular(10),
                 child: FadeInImage.assetNetwork(
                   width: 150,
-                  placeholder: 'images/loading.gif',
+                  placeholder: 'assets/loading.gif',
                   image: nt.imageUrl,
                 ),
               ),

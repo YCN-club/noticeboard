@@ -95,7 +95,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     style: TextStyle(color: Colors.grey),
                   ),
                   Image(
-                    image: AssetImage('images/cxlogo.png'),
+                    image: AssetImage('assets/cxlogo.png'),
                     width: 200,
                     height: 100,
                   ),

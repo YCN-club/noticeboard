@@ -1,6 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:noticeboard/views/mainPages/home_screen.dart';
+import 'package:noticeboard/views/home_screen.dart';
 
 class TabNavigator extends StatefulWidget {
   const TabNavigator({super.key});
@@ -11,7 +13,7 @@ class TabNavigator extends StatefulWidget {
 
 class _TabNavigatorState extends State<TabNavigator> {
   int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
+  final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     Text('Notices'),
     Text('Profile Section')
@@ -19,12 +21,29 @@ class _TabNavigatorState extends State<TabNavigator> {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+      extendBodyBehindAppBar: true,
+      appBar: PreferredSize(
+        preferredSize: const Size(double.infinity, 65.0),
+        child: ClipRRect(
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+            child: AppBar(
+              title: Image.asset(
+                isDarkMode ? 'assets/logo-dark.png' : 'assets/logo-light.png',
+                width: 160,
+              ),
+              forceMaterialTransparency: true,
+              elevation: 0.0,
+            ),
+          ),
+        ),
       ),
+      body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 18),
+        padding: const EdgeInsets.all(16),
         color: Colors.black,
         child: GNav(
           color: Colors.white,

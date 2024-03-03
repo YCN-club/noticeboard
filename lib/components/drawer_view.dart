@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:noticeboard/views/mainPages/contributors_page.dart';
+import 'package:noticeboard/views/contributors_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DrawerView extends StatelessWidget {
@@ -27,7 +27,7 @@ class DrawerView extends StatelessWidget {
         DrawerHeader(
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: const AssetImage('images/mitBuilding.png'),
+                  image: const AssetImage('assets/mitBuilding.png'),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.4), BlendMode.darken))),
@@ -79,11 +79,6 @@ class DrawerView extends StatelessWidget {
             Text(
               'Brought to you by mitblr.club',
               style: TextStyle(color: Colors.grey),
-            ),
-            Image(
-              image: AssetImage('images/cxlogo.png'),
-              width: 200,
-              height: 100,
             ),
           ],
         ),
