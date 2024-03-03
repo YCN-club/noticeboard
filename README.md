@@ -28,7 +28,7 @@ Before getting started, make sure you have the following installed on your syste
 1. Clone the NoticeBoard repository:
 
 ```bash
-git clone https://github.com/CodeX-MIT-BLR/NoticeBoard.git
+git clone https://github.com/mitblr-club/noticeboard.git
 ```
 2. Navigate to the project directory:
 
@@ -55,7 +55,7 @@ This command will build and launch the NoticeBoard application on your device.
 <img src="https://raw.githubusercontent.com/HurricanoBot/HurricanoImages/d0facab8f7e20042e5f1381525d6a80ada6e62e6/other/undraw_real_time_collaboration_c62i.svg" width="50%" align="right">
 <h2>Contributing</h2>
 
-Any idea on how we can make this more awesome ? [Open a new issue](https://github.com/CodeX-MIT-BLR/NoticeBoard/issues)! We need all the help we can get to make this project awesome! You can also join the discord server to give suggestions. You can read the [Contributing guidelines](CONTRIBUTING.md).
+Any idea on how we can make this more awesome ? [Open a new issue](https://github.com/mitblr-club/noticeboard/issues)! We need all the help we can get to make this project awesome! You can also join the discord server to give suggestions. You can read the [Contributing guidelines](CONTRIBUTING.md).
 
 <br/>
 <br/>
@@ -70,7 +70,7 @@ If you want to contribute code to the project, you can do so by submitting a pul
 
 1. Fork the repository to your GitHub account.
 2. Clone your forked repository to your local machine. 
-```git clone https://github.com/CodeX-MIT-BLR/NoticeBoard```
+```git clone https://github.com/mitblr-club/noticeboard```
 3. Create a new branch for your changes:
 ```git checkout -b my-feature```
 4. Make the necessary changes and commit them.

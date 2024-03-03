@@ -91,7 +91,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               const Column(
                 children: [
                   Text(
-                    "Brought to you by CodeX MIT-BLR",
+                    "Brought to you by mitblr.club",
                     style: TextStyle(color: Colors.grey),
                   ),
                   Image(

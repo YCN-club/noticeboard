@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:notice_board/views/mainPages/contributors_page.dart';
+import 'package:noticeboard/views/mainPages/contributors_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DrawerView extends StatelessWidget {
@@ -77,7 +77,7 @@ class DrawerView extends StatelessWidget {
         const Column(
           children: [
             Text(
-              "Brought to you by CodeX MIT-BLR",
+              "Brought to you by mitblr.club",
               style: TextStyle(color: Colors.grey),
             ),
             Image(
