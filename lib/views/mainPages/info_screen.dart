@@ -6,7 +6,7 @@ class InfoScreen extends StatelessWidget {
 
   InfoScreen({super.key, required this.infoNotice});
 
-  final tagsList = ["Solstice Fest", "Events", "News", "Student Council"];
+  final tagsList = ['Solstice Fest', 'Events', 'News', 'Student Council'];
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class InfoScreen extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                  "Published on ${infoNotice.date.day}/${infoNotice.date.month}/${infoNotice.date.year}",
+                  'Published on ${infoNotice.date.day}/${infoNotice.date.month}/${infoNotice.date.year}',
                   style: const TextStyle(
                       fontWeight: FontWeight.w500, color: Colors.grey),
                 ),
@@ -82,7 +82,7 @@ class InfoScreen extends StatelessWidget {
                   height: 10,
                 ),
                 const Text(
-                  "TAGS",
+                  'TAGS',
                   style: TextStyle(color: Colors.grey),
                 ),
                 const SizedBox(

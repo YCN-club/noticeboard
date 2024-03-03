@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:noticeboard/controllers/post_controller.dart';
-import 'package:noticeboard/views/components/notice_list.dart';
 import 'package:noticeboard/views/components/drawer_view.dart';
-import 'package:flutter/services.dart';
+import 'package:noticeboard/views/components/notice_list.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.black),
           title: const Text(
-            "noticeboard.",
+            'noticeboard.',
             style: TextStyle(color: Colors.black, fontSize: 17),
           ),
           backgroundColor: Colors.transparent,

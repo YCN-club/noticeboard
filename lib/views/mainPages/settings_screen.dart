@@ -30,7 +30,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
-          "Settings",
+          'Settings',
           style: TextStyle(color: Colors.black),
         ),
         leading: const BackButton(
@@ -51,7 +51,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       const Text(
-                        "Push Notifications",
+                        'Push Notifications',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 15,
@@ -71,7 +71,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       const Text(
-                        "Dark Mode",
+                        'Dark Mode',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 15,
@@ -91,11 +91,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
               const Column(
                 children: [
                   Text(
-                    "Brought to you by mitblr.club",
+                    'Brought to you by mitblr.club',
                     style: TextStyle(color: Colors.grey),
                   ),
                   Image(
-                    image: AssetImage("images/cxlogo.png"),
+                    image: AssetImage('images/cxlogo.png'),
                     width: 200,
                     height: 100,
                   ),

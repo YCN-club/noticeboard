@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'home_screen.dart';
+import 'package:noticeboard/views/mainPages/home_screen.dart';
 
 class TabNavigator extends StatefulWidget {
   const TabNavigator({super.key});
@@ -37,15 +37,15 @@ class _TabNavigatorState extends State<TabNavigator> {
           tabs: const [
             GButton(
               icon: Icons.calendar_month_outlined,
-              text: "Events",
+              text: 'Events',
             ),
             GButton(
               icon: Icons.notifications,
-              text: "Notices",
+              text: 'Notices',
             ),
             GButton(
               icon: Icons.person,
-              text: "Me",
+              text: 'Me',
             )
           ],
           selectedIndex: _selectedIndex,

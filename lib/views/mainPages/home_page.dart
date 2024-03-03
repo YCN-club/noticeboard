@@ -57,17 +57,17 @@ class HomePage extends StatelessWidget {
               ),
             ),
             elevation: 4,
-            title: const Text("Manipal Notice Board"),
+            title: const Text('Manipal Notice Board'),
             actions: [
               IconButton(
                 onPressed: () => {Get.to(const ContributorsPage())},
                 icon: const Icon(Icons.groups),
-                tooltip: "meet the team and contributors",
+                tooltip: 'meet the team and contributors',
               ),
               IconButton(
                 onPressed: () => {Get.to(const FeedbackPage())},
                 icon: const Icon(Icons.feedback),
-                tooltip: "Send us your ideas and feedback",
+                tooltip: 'Send us your ideas and feedback',
               ),
             ],
           ),

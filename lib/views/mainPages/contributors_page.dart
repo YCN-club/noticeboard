@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:noticeboard/controllers/contributors_controller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContributorsPage extends StatelessWidget {
   const ContributorsPage({super.key});
@@ -22,7 +22,7 @@ class ContributorsPage extends StatelessWidget {
           backgroundColor: Colors.white,
           appBar: AppBar(
             title: const Text(
-              "Behind the Scenes",
+              'Behind the Scenes',
               style: TextStyle(color: Colors.black),
             ),
             leading: const BackButton(
@@ -43,7 +43,7 @@ class ContributorsPage extends StatelessWidget {
                     _launchURLGithub(currentData.htmlUrl);
                   },
                   icon: const Icon(Icons.open_in_new),
-                  label: const Text("GitHub"),
+                  label: const Text('GitHub'),
                 ),
                 leading: CircleAvatar(
                   backgroundImage: NetworkImage(currentData.avatarUrl),
@@ -54,7 +54,7 @@ class ContributorsPage extends StatelessWidget {
                       color: Colors.black, fontWeight: FontWeight.w500),
                 ),
                 subtitle: Text(
-                    "${currentData.contributions.toString()} contributions",
+                    '${currentData.contributions.toString()} contributions',
                     style: const TextStyle(color: Colors.grey)),
               );
             }),

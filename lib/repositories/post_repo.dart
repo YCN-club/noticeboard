@@ -52,6 +52,6 @@ class PostRepo {
     } catch (_) {
       print(_.toString());
     }
-    return Posts(ms: 0, query: "", result: []);
+    return Posts(ms: 0, query: '', result: []);
   }
 }

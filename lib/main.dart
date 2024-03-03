@@ -21,7 +21,7 @@ class MainApp extends StatelessWidget {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Notice Board',
-        theme: ThemeData(primarySwatch: primaryBlack, fontFamily: "Lufga"),
+        theme: ThemeData(primarySwatch: primaryBlack, fontFamily: 'Lufga'),
         home: const TabNavigator());
   }
 }

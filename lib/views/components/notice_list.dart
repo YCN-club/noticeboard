@@ -87,7 +87,7 @@ class _NoticeListState extends State<NoticeList> {
                                   Colors.white),
                               backgroundColor: MaterialStateProperty.all<Color>(
                                   Colors.orange)),
-                          child: const Text("Read More"),
+                          child: const Text('Read More'),
                         ),
                       ],
                     )

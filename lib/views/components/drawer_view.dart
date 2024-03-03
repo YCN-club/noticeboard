@@ -8,15 +8,15 @@ class DrawerView extends StatelessWidget {
 
   Future<void> _launchURL(String url) async {
     final Uri uri = Uri(
-        scheme: "https",
-        host: "www.docs.google.com",
+        scheme: 'https',
+        host: 'www.docs.google.com',
         path:
-            "/forms/d/e/1FAIpQLScV8JBTgLg9eWwk3OdepyzpQd1oXD64dLx2PrPKg37fGN3jfQ/viewform");
+            '/forms/d/e/1FAIpQLScV8JBTgLg9eWwk3OdepyzpQd1oXD64dLx2PrPKg37fGN3jfQ/viewform');
     if (!await launchUrl(
       uri,
       mode: LaunchMode.externalApplication,
     )) {
-      throw "Can not launch url";
+      throw 'Can not launch url';
     }
   }
 
@@ -27,7 +27,7 @@ class DrawerView extends StatelessWidget {
         DrawerHeader(
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: const AssetImage("images/mitBuilding.png"),
+                  image: const AssetImage('images/mitBuilding.png'),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.4), BlendMode.darken))),
@@ -47,7 +47,7 @@ class DrawerView extends StatelessWidget {
             ),
           ),
           title: const Text(
-            "Contributors",
+            'Contributors',
             style: TextStyle(
               color: Colors.white,
               fontSize: 20,
@@ -59,17 +59,17 @@ class DrawerView extends StatelessWidget {
         ),
         ListTile(
           leading: IconButton(
-            onPressed: () => _launchURL(""),
+            onPressed: () => _launchURL(''),
             icon: const Icon(
               Icons.open_in_new,
               color: Colors.orange,
             ),
           ),
           title: const Text(
-            "Feedback",
+            'Feedback',
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
-          onTap: () => _launchURL(""),
+          onTap: () => _launchURL(''),
         ),
         const SizedBox(
           height: 50,
@@ -77,11 +77,11 @@ class DrawerView extends StatelessWidget {
         const Column(
           children: [
             Text(
-              "Brought to you by mitblr.club",
+              'Brought to you by mitblr.club',
               style: TextStyle(color: Colors.grey),
             ),
             Image(
-              image: AssetImage("images/cxlogo.png"),
+              image: AssetImage('images/cxlogo.png'),
               width: 200,
               height: 100,
             ),
