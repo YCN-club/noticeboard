@@ -65,11 +65,14 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - images/mitBuilding.png
-    - images/placeholder.jpg
-    - images/loading.gif
-    - images/cxlogo.png
-    - images/cxLogoColor.png
+    - assets/mitBuilding.png
+    - assets/placeholder.jpg
+    - assets/loading.gif
+    - assets/cxlogo.png
+    - assets/cxLogoColor.png
+    - assets/logo-light.png
+    - assets/logo-dark.png
+    - assets/mitblr.club.png
 
   fonts:
     - family: Lufga
