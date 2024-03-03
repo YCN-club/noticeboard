@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:notice_board/models/post.dart';
-import 'package:notice_board/repositories/post_repo.dart';
+import 'package:noticeboard/models/post.dart';
+import 'package:noticeboard/repositories/post_repo.dart';
 
-class PostViewModel extends GetxController {
+class PostController extends GetxController {
   final PostRepo _repo = PostRepo();
   final posts = Posts(ms: 0, query: "", result: []).obs;
   Future fetchPosts() async {

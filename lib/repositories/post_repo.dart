@@ -1,5 +1,5 @@
 import 'package:http/http.dart' as http;
-import 'package:notice_board/models/post.dart';
+import 'package:noticeboard/models/post.dart';
 
 class PostRepo {
   // final client = http.Client();

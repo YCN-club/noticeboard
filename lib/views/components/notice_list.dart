@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:notice_board/models/post.dart';
-import 'package:notice_board/views/mainPages/info_screen.dart';
+import 'package:noticeboard/models/post.dart';
+import 'package:noticeboard/views/mainPages/info_screen.dart';
 
 class NoticeList extends StatefulWidget {
   final Posts noticeArray;

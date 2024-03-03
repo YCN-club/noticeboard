@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:notice_board/viewmodels/post_view_model.dart';
-import 'package:notice_board/views/components/post_card.dart';
-import 'package:notice_board/views/mainPages/contributors_page.dart';
-import 'package:notice_board/views/mainPages/feedback_page.dart';
+import 'package:noticeboard/controllers/post_controller.dart';
+import 'package:noticeboard/views/components/post_card.dart';
+import 'package:noticeboard/views/mainPages/contributors_page.dart';
+import 'package:noticeboard/views/mainPages/feedback_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetX<PostViewModel>(builder: (controller) {
+    return GetX<PostController>(builder: (controller) {
       return Scaffold(
           backgroundColor: Colors.black,
           floatingActionButton: Wrap(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:notice_board/viewmodels/contributors_view_model.dart';
-import 'package:notice_board/viewmodels/post_view_model.dart';
-import 'package:notice_board/views/mainPages/tab_navigator.dart';
+import 'package:noticeboard/controllers/contributors_controller.dart';
+import 'package:noticeboard/controllers/post_controller.dart';
+import 'package:noticeboard/views/mainPages/tab_navigator.dart';
 
 void main(List<String> args) async {
   runApp(const MainApp());
@@ -13,10 +13,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final PostViewModel controller = Get.put(PostViewModel());
-    final ContributorsViewModel controller2 = Get.put(ContributorsViewModel());
-    controller.fetchPosts();
-    controller2.getContributors();
+    final PostController postController = Get.put(PostController());
+    final ContributorController contributorController =
+        Get.put(ContributorController());
+    postController.fetchPosts();
+    contributorController.getContributors();
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Notice Board',

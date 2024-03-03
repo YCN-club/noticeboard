@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:notice_board/viewmodels/contributors_view_model.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:noticeboard/controllers/contributors_controller.dart';
 
 class ContributorsPage extends StatelessWidget {
   const ContributorsPage({super.key});
@@ -17,7 +17,7 @@ class ContributorsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetX<ContributorsViewModel>(builder: (controller) {
+    return GetX<ContributorController>(builder: (controller) {
       return Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(

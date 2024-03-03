@@ -1,4 +1,4 @@
-name: notice_board
+name: noticeboard
 description: An interactive notice board to spread awareness of all the events happening in MAHE BLR
 
 # The following line prevents the package from being accidentally published to
@@ -48,8 +48,6 @@ dependencies:
   provider: ^6.0.5
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   flutter_launcher_icons: ^0.13.1
   build_runner: ^2.3.3
   json_annotation: ^4.8.0

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notice_board/models/post.dart';
+import 'package:noticeboard/models/post.dart';
 
 class DisplayPosts extends StatelessWidget {
   final Posts posts;
