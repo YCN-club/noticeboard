@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:get/get.dart';
-import 'package:noticeboard/components/drawer_view.dart';
+
 import 'package:noticeboard/components/notice_list.dart';
 import 'package:noticeboard/controllers/post_controller.dart';
 

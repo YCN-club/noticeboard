@@ -29,35 +29,24 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  cached_network_image: ^3.2.3
+  cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-  path: any
-  intl: ^0.19.0
-  url_launcher: ^6.1.9
-  google_nav_bar: ^5.0.6
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  flutter_dotenv: ^5.0.2
+  flutter_native_splash: ^2.3.13
   get: ^4.6.5
+  google_nav_bar: ^5.0.6
   http: ^1.2.1
   json_serializable: ^6.6.1
-  flutter_dotenv: ^5.0.2
-  webview_flutter: ^4.0.5
-  cached_network_image: ^3.2.3
-  shared_preferences: ^2.1.0
   provider: ^6.0.5
+  shared_preferences: ^2.1.0
+  url_launcher: ^6.1.9
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1
-  build_runner: ^2.3.3
-  json_annotation: ^4.8.0
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^3.0.1
+  json_annotation: ^4.8.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -68,8 +57,6 @@ flutter:
     - assets/mitBuilding.png
     - assets/placeholder.jpg
     - assets/loading.gif
-    - assets/cxlogo.png
-    - assets/cxLogoColor.png
     - assets/logo-light.png
     - assets/logo-dark.png
     - assets/mitblr.club.png

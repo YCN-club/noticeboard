@@ -94,11 +94,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     'Brought to you by mitblr.club',
                     style: TextStyle(color: Colors.grey),
                   ),
-                  Image(
-                    image: AssetImage('assets/cxlogo.png'),
-                    width: 200,
-                    height: 100,
-                  ),
                 ],
               ),
             ]),

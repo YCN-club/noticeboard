@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
+
 import 'package:noticeboard/controllers/contributors_controller.dart';
 import 'package:noticeboard/controllers/post_controller.dart';
 import 'package:noticeboard/views/tab_navigator.dart';
