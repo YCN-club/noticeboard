@@ -27,7 +27,7 @@ class DrawerView extends StatelessWidget {
         DrawerHeader(
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: const AssetImage("images/mitBuilding.jpeg"),
+                  image: const AssetImage("images/mitBuilding.png"),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.4), BlendMode.darken))),
