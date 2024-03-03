@@ -1,31 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:notice_board/viewmodels/ContributorsViewModel.dart';
-import 'package:notice_board/viewmodels/PostViewModel.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:notice_board/views/mainPages/TabNavigator.dart';
-import 'package:notice_board/views/mainPages/homeScreen.dart';
-import 'models/darkThemeProvider.dart';
+import 'package:noticeboard/controllers/contributors_controller.dart';
+import 'package:noticeboard/controllers/post_controller.dart';
+import 'package:noticeboard/views/mainPages/tab_navigator.dart';
 
 void main(List<String> args) async {
-  await dotenv.load(fileName: ".env");
   runApp(const MainApp());
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({Key? key}) : super(key: key);
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final PostViewModel controller = Get.put(PostViewModel());
-    final ContributorsViewModel controller2 = Get.put(ContributorsViewModel());
-    controller.fetchPosts();
-    controller2.getContributors();
+    final PostController postController = Get.put(PostController());
+    final ContributorController contributorController =
+        Get.put(ContributorController());
+    postController.fetchPosts();
+    contributorController.getContributors();
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Notice Board',
         theme: ThemeData(primarySwatch: primaryBlack, fontFamily: "Lufga"),
-        home: TabNavigator());
+        home: const TabNavigator());
   }
 }
 
