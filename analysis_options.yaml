@@ -1,5 +1,8 @@
 linter:
   rules:
     - always_use_package_imports
-    - directives_ordering
     - prefer_single_quotes
+
+analyzer:
+  errors:
+    invalid_annotation_target: ignore
