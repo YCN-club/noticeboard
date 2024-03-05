@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:noticeboard/models/post.dart';
 import 'package:noticeboard/views/info_screen.dart';
 
@@ -19,13 +20,10 @@ class _NoticeListState extends State<NoticeList> {
             children: widget.noticeArray.result.map((nt) {
       return Card(
         color: Colors.white,
-        elevation: 1,
-        shadowColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),

@@ -24,7 +24,7 @@ class PostCard extends StatelessWidget {
       elevation: 10.0,
       child: Column(children: [
         FadeInImage.assetNetwork(
-            placeholder: 'assets/placeholder.jpeg', image: image),
+            placeholder: 'assets/placeholder.jpg', image: image),
         ListTile(
           title: Text(title),
           subtitle: Text(description),

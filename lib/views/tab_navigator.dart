@@ -31,10 +31,12 @@ class _TabNavigatorState extends State<TabNavigator> {
         preferredSize: const Size(double.infinity, 65.0),
         child: ClipRRect(
           child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+            filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
             child: AppBar(
               title: Image.asset(
-                isDarkMode ? 'assets/logo-dark.png' : 'assets/logo-light.png',
+                isDarkMode
+                    ? 'assets/noticeboard/logo-dark.png'
+                    : 'assets/noticeboard/logo-light.png',
                 width: 160,
               ),
               forceMaterialTransparency: true,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/route_manager.dart';
-import 'package:noticeboard/views/contributors_page.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'package:noticeboard/views/contributors_page.dart';
 
 class DrawerView extends StatelessWidget {
   const DrawerView({super.key});
@@ -24,18 +26,6 @@ class DrawerView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        DrawerHeader(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: const AssetImage('assets/mitBuilding.png'),
-                  fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(
-                      Colors.black.withOpacity(0.4), BlendMode.darken))),
-          child: const Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [],
-          ),
-        ),
         ListTile(
           leading: IconButton(
             onPressed: () {
