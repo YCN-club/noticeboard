@@ -21,11 +21,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Notice Board',
-      theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.orange,
-          ),
-          useMaterial3: true),
+      theme: ThemeData(primarySwatch: Colors.orange, useMaterial3: true),
       darkTheme: ThemeData.dark(useMaterial3: true),
       home: const TabNavigator(),
     );
