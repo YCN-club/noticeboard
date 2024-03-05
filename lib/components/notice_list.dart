@@ -15,11 +15,14 @@ class NoticeList extends StatefulWidget {
 class _NoticeListState extends State<NoticeList> {
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return SingleChildScrollView(
         child: Column(
             children: widget.noticeArray.result.map((nt) {
       return Card(
-        color: Colors.white,
+        color: colorScheme.background,
+        shadowColor: colorScheme.shadow,
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Row(
@@ -42,19 +45,19 @@ class _NoticeListState extends State<NoticeList> {
                   children: [
                     Text(
                       nt.title,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w500,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700,
                           fontSize: 20,
                           letterSpacing: -0.6,
-                          color: Colors.black),
+                          color: colorScheme.onBackground),
                     ),
                     const SizedBox(height: 10),
                     Text(
                       nt.shortDescription,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w500,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
                         fontSize: 15,
-                        color: Colors.grey,
+                        color: colorScheme.onBackground,
                       ),
                     ),
                     const SizedBox(

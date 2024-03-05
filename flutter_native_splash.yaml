@@ -1,0 +1,9 @@
+flutter_native_splash:
+  background_image: 'assets/splash-background.png'
+  image: 'assets/splash-icon.png'
+  branding: 'assets/mitblr.club/logo-splash.png'
+
+  android_12:
+    image: 'assets/splash-icon.png'
+    color: '#ee7600'
+    branding: 'assets/mitblr.club/logo-splash.png'

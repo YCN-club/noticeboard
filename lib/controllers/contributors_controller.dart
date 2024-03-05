@@ -8,7 +8,7 @@ class ContributorController extends GetxController {
   final contributors = <Contributor>[].obs;
   Future getContributors() async {
     var temp = await _repo.getApiData();
-    if (!temp.isBlank) {
+    if (temp != null) {
       contributors.value = temp;
     }
   }
