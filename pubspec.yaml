@@ -58,7 +58,6 @@ dev_dependencies:
 flutter:
   assets:
     - assets/launcher-icon.png
-    - assets/splash-icon.png
     - assets/noticeboard/logo-light.png
     - assets/noticeboard/logo-dark.png
     - assets/mitblr.club/logo-light.png
