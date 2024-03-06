@@ -1,9 +1,19 @@
+# dart run flutter_native_splash:create
+
 flutter_native_splash:
-  background_image: 'assets/splash-background.png'
-  image: 'assets/splash-icon.png'
-  branding: 'assets/mitblr.club/logo-splash.png'
+  color: '#ffffff'
+  image: 'assets/splash/de571d-outlined.png'
+  branding: 'assets/splash/logo-light.png'
+
+  color_dark: '#111111'
+  image_dark: 'assets/splash/ff7235-filled.png'
+  branding_dark: 'assets/splash/logo-dark.png'
 
   android_12:
-    image: 'assets/splash-icon.png'
-    color: '#ee7600'
-    branding: 'assets/mitblr.club/logo-splash.png'
+    color: '#ffffff'
+    image: 'assets/splash/de571d-outlined.png'
+    branding: 'assets/splash/logo-light.png'
+
+    color_dark: '#111111'
+    image_dark: 'assets/splash/ff7235-filled.png'
+    branding_dark: 'assets/splash/logo-dark.png'
