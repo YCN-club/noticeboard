@@ -33,7 +33,7 @@ git clone https://github.com/mitblr-club/noticeboard.git
 2. Navigate to the project directory:
 
 ```bash
-cd NoticeBoard
+cd noticeboard
 ```
 3. Install the project dependencies:
 
@@ -52,17 +52,9 @@ flutter run
 ```
 This command will build and launch the NoticeBoard application on your device.
 
-<img src="https://raw.githubusercontent.com/HurricanoBot/HurricanoImages/d0facab8f7e20042e5f1381525d6a80ada6e62e6/other/undraw_real_time_collaboration_c62i.svg" width="50%" align="right">
-<h2>Contributing</h2>
+## Contributing
 
 Any idea on how we can make this more awesome ? [Open a new issue](https://github.com/mitblr-club/noticeboard/issues)! We need all the help we can get to make this project awesome! You can also join the discord server to give suggestions. You can read the [Contributing guidelines](CONTRIBUTING.md).
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 
 ## Submitting Pull Requests
 
@@ -82,17 +74,6 @@ git push origin my-feature
 ```
 6. Open a pull request on the Pull Request page of the original repository.
 
-## Project Maintainers ✨
-
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/Chandan-CV"><img src="https://avatars.githubusercontent.com/u/37525954?v=4" width="100px;" alt=""/><br /><sub><b>Chandan-CV
-</b></sub></a></td>
-    <td align="center"><a href="https://github.com/scenario7"><img src="https://avatars.githubusercontent.com/u/77824686?v=4" width="100px;" alt=""/><br /><sub><b>Kevin Thomas
-</b></sub></a></td>
-  </tr>
-</table>
-
 ## License
    
-The NoticeBoard project is licensed under the MIT License. Please see the LICENSE file for more details.
+The NoticeBoard project is licensed under the GPL-3.0 License. Please see the LICENSE.md file for more details.
