@@ -13,34 +13,36 @@ class ContributorsView extends ConsumerWidget {
     final contributors = ref.watch(contributorsProvider);
 
     return contributors.when(
-      data: (data) => ListView.builder(
-        itemCount: data.length,
-        itemBuilder: ((context, index) {
-          return ListTile(
-            trailing: IconButton(
-              onPressed: () {
-                launchUrl(Uri.parse(data[index].htmlUrl));
-              },
-              icon: const Icon(Icons.open_in_new),
+        data: (data) => ListView.builder(
+              itemCount: data.length,
+              itemBuilder: ((context, index) {
+                return ListTile(
+                  trailing: IconButton(
+                    onPressed: () {
+                      launchUrl(Uri.parse(data[index].htmlUrl));
+                    },
+                    icon: const Icon(Icons.open_in_new),
+                  ),
+                  leading: CircleAvatar(
+                    backgroundImage: NetworkImage(data[index].avatarUrl),
+                  ),
+                  title: Text(
+                    data[index].login,
+                    style: const TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.w500),
+                  ),
+                  subtitle: Text(
+                      '${data[index].contributions.toString()} contributions',
+                      style: const TextStyle(color: Colors.grey)),
+                );
+              }),
             ),
-            leading: CircleAvatar(
-              backgroundImage: NetworkImage(data[index].avatarUrl),
-            ),
-            title: Text(
-              data[index].login,
-              style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.w500),
-            ),
-            subtitle: Text(
-                '${data[index].contributions.toString()} contributions',
-                style: const TextStyle(color: Colors.grey)),
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (error, stackTrace) {
+          print(stackTrace.toString());
+          return Center(
+            child: Text('Contributors could not be fetched.'),
           );
-        }),
-      ),
-      loading: () => const Center(child: CircularProgressIndicator()),
-      error: (error, stackTrace) => Center(
-        child: Text('Contributors could not be fetched.'),
-      ),
-    );
+        });
   }
 }
