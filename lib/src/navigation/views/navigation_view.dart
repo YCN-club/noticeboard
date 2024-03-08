@@ -2,8 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import 'package:google_nav_bar/google_nav_bar.dart';
-
 class NavigationView extends StatefulWidget {
   const NavigationView({super.key});
 
@@ -31,6 +29,7 @@ class _NavigationViewState extends State<NavigationView> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
+      extendBody: true,
       appBar: PreferredSize(
         child: ClipRRect(
           child: BackdropFilter(
@@ -67,37 +66,36 @@ class _NavigationViewState extends State<NavigationView> {
         index: _selectedIndex,
         children: _views,
       ),
-      bottomNavigationBar: Container(
-        padding: const EdgeInsets.all(16),
-        color: colorScheme.background.withOpacity(0.5),
-        child: GNav(
-          color: colorScheme.onBackground,
-          backgroundColor: colorScheme.background.withOpacity(0.5),
-          activeColor: colorScheme.primary,
-          tabBackgroundColor: colorScheme.background.withOpacity(0.6),
-          gap: 8,
-          haptic: true,
-          padding: const EdgeInsets.all(16),
-          tabs: const [
-            GButton(
-              icon: Icons.calendar_month_outlined,
-              text: 'Events',
-            ),
-            GButton(
-              icon: Icons.notifications,
-              text: 'Notices',
-            ),
-            GButton(
-              icon: Icons.person,
-              text: 'Me',
-            )
-          ],
-          selectedIndex: _selectedIndex,
-          onTabChange: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
+      bottomNavigationBar: ClipRRect(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 6.0, sigmaY: 6.0),
+          child: NavigationBar(
+            selectedIndex: _selectedIndex,
+            onDestinationSelected: ((index) {
+              setState(() {
+                _selectedIndex = index;
+              });
+            }),
+            destinations: <NavigationDestination>[
+              NavigationDestination(
+                icon: Icon(Icons.explore_outlined),
+                label: 'Events',
+                selectedIcon: Icon(Icons.explore),
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.calendar_month_outlined),
+                label: 'Notices',
+                selectedIcon: Icon(Icons.calendar_month_rounded),
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.person_outline_outlined),
+                label: 'Profile',
+                selectedIcon: Icon(Icons.person),
+              )
+            ],
+            elevation: 0.0,
+            backgroundColor: colorScheme.background.withOpacity(0.6),
+          ),
         ),
       ),
     );
