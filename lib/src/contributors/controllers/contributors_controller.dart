@@ -11,10 +11,10 @@ part 'contributors_controller.g.dart';
 class Contributors extends _$Contributors {
   @override
   Future<List<ContributorModel>> build() async {
-    return await init();
+    return await getContributors();
   }
 
-  Future<List<ContributorModel>> init() async {
+  Future<List<ContributorModel>> getContributors() async {
     var url = Uri.parse(
       'https://api.github.com/repos/mitblr-club/noticeboard/contributors',
     );

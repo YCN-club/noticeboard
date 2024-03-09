@@ -6,7 +6,7 @@ part of 'contributors_controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$contributorsHash() => r'f9c11d2ea2ff87a47d3e73e79db5cb5f2576d7b4';
+String _$contributorsHash() => r'ddb750a1427cbe6741792416250aacf0345ba7dc';
 
 /// See also [Contributors].
 @ProviderFor(Contributors)
