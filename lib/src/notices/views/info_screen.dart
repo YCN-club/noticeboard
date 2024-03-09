@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:noticeboard/models/post.dart';
+
+import 'package:noticeboard/src/notices/models/result_model.dart';
 
 class InfoScreen extends StatelessWidget {
-  final Result infoNotice;
+  final ResultModel infoNotice;
 
   InfoScreen({super.key, required this.infoNotice});
 
@@ -59,14 +60,6 @@ class InfoScreen extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Text(
-                //   DateFormat.yMMMd().format(infoNotice.date),
-                //   style: const TextStyle(
-                //       color: Colors.grey,
-                //       fontSize: 17,
-                //       fontWeight: FontWeight.w600,
-                //       letterSpacing: -1),
-                // ),
                 const SizedBox(
                   height: 20,
                 ),

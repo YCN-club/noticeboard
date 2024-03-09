@@ -331,7 +331,8 @@ class __$$ContributorModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$ContributorModelImpl
     with DiagnosticableTreeMixin
     implements _ContributorModel {

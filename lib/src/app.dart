@@ -1,29 +1,23 @@
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:noticeboard/controllers/contributors_controller.dart';
-import 'package:noticeboard/controllers/post_controller.dart';
-import 'package:noticeboard/views/tab_navigator.dart';
+import 'package:noticeboard/src/navigation/views/navigation_view.dart';
+import 'package:noticeboard/src/settings/controllers/settings_controller.dart';
 
-class MainApp extends StatelessWidget {
+class MainApp extends ConsumerWidget {
   const MainApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final PostController postController = Get.put(PostController());
-    final ContributorController contributorController =
-        Get.put(ContributorController());
-
-    postController.fetchPosts();
-    contributorController.getContributors();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final settings = ref.watch(settingsProvider);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Notice Board',
-      theme: ThemeData(primarySwatch: Colors.orange, useMaterial3: true),
-      darkTheme: ThemeData.dark(useMaterial3: true),
-      home: const TabNavigator(),
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: settings.themeMode,
+      home: const NavigationView(),
     );
   }
 }
