@@ -2,6 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import 'package:noticeboard/src/contributors/views/contributors_view.dart';
+import 'package:noticeboard/src/notices/views/events_view.dart';
+
 class NavigationView extends StatefulWidget {
   const NavigationView({super.key});
 
@@ -11,15 +14,11 @@ class NavigationView extends StatefulWidget {
 
 class _NavigationViewState extends State<NavigationView> {
   final List<Widget> _views = <Widget>[
-    const Center(
-      child: Text('Events View'),
-    ),
+    const EventsView(),
     const Center(
       child: Text('Notices View'),
     ),
-    const Center(
-      child: Text('Profile View'),
-    ),
+    const ContributorsView(),
   ];
   int _selectedIndex = 0;
 
@@ -47,12 +46,13 @@ class _NavigationViewState extends State<NavigationView> {
                 centerTitle: true,
                 actions: [
                   IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.tune,
-                        weight: 200,
-                        color: colorScheme.onBackground,
-                      ))
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.tune,
+                      weight: 200,
+                      color: colorScheme.onBackground,
+                    ),
+                  ),
                 ],
                 elevation: 0.0,
                 scrolledUnderElevation: 0.0,
