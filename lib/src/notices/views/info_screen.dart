@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:noticeboard/models/post.dart';
+import 'package:noticeboard/src/notices/models/result_model.dart';
 
 class InfoScreen extends StatelessWidget {
-  final Result infoNotice;
+  final ResultModel infoNotice;
 
   InfoScreen({super.key, required this.infoNotice});
 
