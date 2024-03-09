@@ -10,40 +10,47 @@ class ContributorsView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final textTheme = Theme.of(context).textTheme;
     final contributors = ref.watch(contributorsProvider);
 
-    return contributors.when(
-      data: (data) => ListView.builder(
-        itemCount: data.length,
-        itemBuilder: ((context, index) {
-          return ListTile(
-            trailing: IconButton(
-              onPressed: () {
-                launchUrl(Uri.parse(data[index].htmlUrl));
-              },
-              icon: const Icon(Icons.open_in_new),
-            ),
-            leading: CircleAvatar(
-              backgroundImage: NetworkImage(data[index].avatarUrl),
-            ),
-            title: Text(
-              data[index].login,
-              style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.w500),
-            ),
-            subtitle: Text(
-                '${data[index].contributions.toString()} contributions',
-                style: const TextStyle(color: Colors.grey)),
-          );
-        }),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Contributors'),
       ),
-      loading: () => const Center(child: CircularProgressIndicator()),
-      error: (error, stackTrace) {
-        print(stackTrace.toString());
-        return Center(
-          child: Text('Contributors could not be fetched.'),
-        );
-      },
+      body: contributors.when(
+        data: (data) => ListView.builder(
+          itemCount: data.length,
+          itemBuilder: ((context, index) {
+            return ListTile(
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage(data[index].avatarUrl),
+              ),
+              title: Text(
+                data[index].login,
+                style: textTheme.titleMedium,
+              ),
+              subtitle: Text(
+                '${data[index].contributions.toString()} contributions',
+                style: textTheme.bodySmall,
+              ),
+              trailing: IconButton.outlined(
+                onPressed: () {
+                  launchUrl(Uri.parse(data[index].htmlUrl));
+                },
+                icon: const Icon(Icons.arrow_outward),
+              ),
+            );
+          }),
+        ),
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (error, stackTrace) {
+          print(error.toString());
+          return Center(
+            child: Text('Contributors could not be fetched.'),
+          );
+        },
+      ),
     );
   }
 }

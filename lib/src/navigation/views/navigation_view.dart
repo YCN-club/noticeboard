@@ -18,7 +18,9 @@ class _NavigationViewState extends State<NavigationView> {
     const Center(
       child: Text('Notices View'),
     ),
-    const ContributorsView(),
+    const Center(
+      child: Text('Profile View'),
+    ),
   ];
   int _selectedIndex = 0;
 
@@ -46,7 +48,10 @@ class _NavigationViewState extends State<NavigationView> {
                 centerTitle: true,
                 actions: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ContributorsView()));
+                    },
                     icon: Icon(
                       Icons.tune,
                       weight: 200,

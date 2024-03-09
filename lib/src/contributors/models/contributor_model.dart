@@ -9,6 +9,7 @@ part 'contributor_model.g.dart';
 
 @freezed
 class ContributorModel with _$ContributorModel {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory ContributorModel({
     required String login,
     required int id,

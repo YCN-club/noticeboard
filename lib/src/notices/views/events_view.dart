@@ -67,7 +67,7 @@ class EventsView extends ConsumerWidget {
       ),
       loading: () => const Center(child: CircularProgressIndicator()),
       error: (error, stackTrace) {
-        print(stackTrace.toString());
+        print(error.toString());
         return Center(
           child: Text('Events could not be fetched.'),
         );
