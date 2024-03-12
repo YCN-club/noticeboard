@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'package:noticeboard/src/contributors/views/contributors_view.dart';
+import 'package:noticeboard/src/navigation/components/keep_alive_page.dart';
 import 'package:noticeboard/src/notices/views/events_view.dart';
 
 class NavigationView extends StatefulWidget {
@@ -14,15 +15,16 @@ class NavigationView extends StatefulWidget {
 
 class _NavigationViewState extends State<NavigationView> {
   final List<Widget> _views = <Widget>[
-    const EventsView(),
-    const Center(
-      child: Text('Notices View'),
-    ),
+    KeepAlivePage(child: const EventsView()),
     const Center(
       child: Text('Profile View'),
     ),
+    const Center(
+      child: Text('Notices View'),
+    ),
   ];
-  int _selectedIndex = 0;
+  PageController _pageController = PageController(initialPage: 1);
+  int _selectedIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +47,6 @@ class _NavigationViewState extends State<NavigationView> {
                       : 'assets/noticeboard/logo-light.png',
                   width: 160,
                 ),
-                centerTitle: true,
                 actions: [
                   IconButton(
                     onPressed: () {
@@ -67,8 +68,15 @@ class _NavigationViewState extends State<NavigationView> {
         ),
         preferredSize: const Size(double.infinity, 65.0),
       ),
-      body: IndexedStack(
-        index: _selectedIndex,
+      body: PageView(
+        physics: const PageScrollPhysics(),
+        scrollDirection: Axis.horizontal,
+        controller: _pageController,
+        onPageChanged: ((index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        }),
         children: _views,
       ),
       bottomNavigationBar: ClipRRect(
@@ -77,9 +85,7 @@ class _NavigationViewState extends State<NavigationView> {
           child: NavigationBar(
             selectedIndex: _selectedIndex,
             onDestinationSelected: ((index) {
-              setState(() {
-                _selectedIndex = index;
-              });
+              _pageController.jumpToPage(index);
             }),
             destinations: <NavigationDestination>[
               NavigationDestination(
@@ -88,15 +94,15 @@ class _NavigationViewState extends State<NavigationView> {
                 selectedIcon: Icon(Icons.explore),
               ),
               NavigationDestination(
+                icon: Icon(Icons.home_outlined),
+                label: 'Home',
+                selectedIcon: Icon(Icons.home),
+              ),
+              NavigationDestination(
                 icon: Icon(Icons.calendar_month_outlined),
                 label: 'Notices',
                 selectedIcon: Icon(Icons.calendar_month_rounded),
               ),
-              NavigationDestination(
-                icon: Icon(Icons.person_outline_outlined),
-                label: 'Profile',
-                selectedIcon: Icon(Icons.person),
-              )
             ],
             elevation: 0.0,
             backgroundColor: colorScheme.background.withOpacity(0.6),
