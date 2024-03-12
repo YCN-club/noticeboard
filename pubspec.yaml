@@ -63,6 +63,8 @@ flutter:
     - assets/launcher-icon.png
     - assets/noticeboard/logo-light.png
     - assets/noticeboard/logo-dark.png
+    - assets/noticeboard/logo-square-light.png
+    - assets/noticeboard/logo-square-dark.png
     - assets/mitblr.club/logo-light.png
     - assets/mitblr.club/logo-dark.png
     - assets/mitblr.club/logo-ghost.png
