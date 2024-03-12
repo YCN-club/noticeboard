@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:noticeboard/src/contributors/controllers/contributors_controller.dart';
+import 'package:noticeboard/src/navigation/components/sub_view_app_bar.dart';
 
 class ContributorsView extends ConsumerWidget {
   const ContributorsView({super.key});
@@ -14,9 +15,9 @@ class ContributorsView extends ConsumerWidget {
     final contributors = ref.watch(contributorsProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Contributors'),
+      appBar: PreferredSize(
+        child: SubViewAppBar(),
+        preferredSize: Size(double.infinity, 65.0),
       ),
       body: contributors.when(
         data: (data) => ListView.builder(

@@ -47,7 +47,6 @@ class _NavigationViewState extends State<NavigationView> {
                       : 'assets/noticeboard/logo-light.png',
                   width: 160,
                 ),
-                centerTitle: true,
                 actions: [
                   IconButton(
                     onPressed: () {
