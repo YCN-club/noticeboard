@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:noticeboard/src/navigation/views/navigation_view.dart';
 import 'package:noticeboard/src/settings/controllers/settings_controller.dart';
+import 'package:noticeboard/themes.dart';
 
 class MainApp extends ConsumerWidget {
   const MainApp({super.key});
