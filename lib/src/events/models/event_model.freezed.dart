@@ -22,13 +22,16 @@ EventModel _$EventModelFromJson(Map<String, dynamic> json) {
 mixin _$EventModel {
   DateTime get createdAt => throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  String get tagline => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   DateTime get startTime => throw _privateConstructorUsedError;
   DateTime get endTime => throw _privateConstructorUsedError;
-  String get shortDescription => throw _privateConstructorUsedError;
-  String get longDescription => throw _privateConstructorUsedError;
+  String get club => throw _privateConstructorUsedError;
+  String get venue => throw _privateConstructorUsedError;
+  int get registrations => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,13 +49,16 @@ abstract class $EventModelCopyWith<$Res> {
   $Res call(
       {DateTime createdAt,
       DateTime updatedAt,
+      String type,
       String title,
       String image,
-      String type,
+      String tagline,
+      String description,
       DateTime startTime,
       DateTime endTime,
-      String shortDescription,
-      String longDescription,
+      String club,
+      String venue,
+      int registrations,
       List<String> tags});
 }
 
@@ -71,13 +77,16 @@ class _$EventModelCopyWithImpl<$Res, $Val extends EventModel>
   $Res call({
     Object? createdAt = null,
     Object? updatedAt = null,
+    Object? type = null,
     Object? title = null,
     Object? image = null,
-    Object? type = null,
+    Object? tagline = null,
+    Object? description = null,
     Object? startTime = null,
     Object? endTime = null,
-    Object? shortDescription = null,
-    Object? longDescription = null,
+    Object? club = null,
+    Object? venue = null,
+    Object? registrations = null,
     Object? tags = null,
   }) {
     return _then(_value.copyWith(
@@ -89,6 +98,10 @@ class _$EventModelCopyWithImpl<$Res, $Val extends EventModel>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -97,9 +110,13 @@ class _$EventModelCopyWithImpl<$Res, $Val extends EventModel>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
+      tagline: null == tagline
+          ? _value.tagline
+          : tagline // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       startTime: null == startTime
           ? _value.startTime
@@ -109,14 +126,18 @@ class _$EventModelCopyWithImpl<$Res, $Val extends EventModel>
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      shortDescription: null == shortDescription
-          ? _value.shortDescription
-          : shortDescription // ignore: cast_nullable_to_non_nullable
+      club: null == club
+          ? _value.club
+          : club // ignore: cast_nullable_to_non_nullable
               as String,
-      longDescription: null == longDescription
-          ? _value.longDescription
-          : longDescription // ignore: cast_nullable_to_non_nullable
+      venue: null == venue
+          ? _value.venue
+          : venue // ignore: cast_nullable_to_non_nullable
               as String,
+      registrations: null == registrations
+          ? _value.registrations
+          : registrations // ignore: cast_nullable_to_non_nullable
+              as int,
       tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -136,13 +157,16 @@ abstract class _$$EventModelImplCopyWith<$Res>
   $Res call(
       {DateTime createdAt,
       DateTime updatedAt,
+      String type,
       String title,
       String image,
-      String type,
+      String tagline,
+      String description,
       DateTime startTime,
       DateTime endTime,
-      String shortDescription,
-      String longDescription,
+      String club,
+      String venue,
+      int registrations,
       List<String> tags});
 }
 
@@ -159,13 +183,16 @@ class __$$EventModelImplCopyWithImpl<$Res>
   $Res call({
     Object? createdAt = null,
     Object? updatedAt = null,
+    Object? type = null,
     Object? title = null,
     Object? image = null,
-    Object? type = null,
+    Object? tagline = null,
+    Object? description = null,
     Object? startTime = null,
     Object? endTime = null,
-    Object? shortDescription = null,
-    Object? longDescription = null,
+    Object? club = null,
+    Object? venue = null,
+    Object? registrations = null,
     Object? tags = null,
   }) {
     return _then(_$EventModelImpl(
@@ -177,6 +204,10 @@ class __$$EventModelImplCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -185,9 +216,13 @@ class __$$EventModelImplCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
+      tagline: null == tagline
+          ? _value.tagline
+          : tagline // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       startTime: null == startTime
           ? _value.startTime
@@ -197,14 +232,18 @@ class __$$EventModelImplCopyWithImpl<$Res>
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      shortDescription: null == shortDescription
-          ? _value.shortDescription
-          : shortDescription // ignore: cast_nullable_to_non_nullable
+      club: null == club
+          ? _value.club
+          : club // ignore: cast_nullable_to_non_nullable
               as String,
-      longDescription: null == longDescription
-          ? _value.longDescription
-          : longDescription // ignore: cast_nullable_to_non_nullable
+      venue: null == venue
+          ? _value.venue
+          : venue // ignore: cast_nullable_to_non_nullable
               as String,
+      registrations: null == registrations
+          ? _value.registrations
+          : registrations // ignore: cast_nullable_to_non_nullable
+              as int,
       tags: null == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -219,13 +258,16 @@ class _$EventModelImpl with DiagnosticableTreeMixin implements _EventModel {
   const _$EventModelImpl(
       {required this.createdAt,
       required this.updatedAt,
+      required this.type,
       required this.title,
       required this.image,
-      required this.type,
+      required this.tagline,
+      required this.description,
       required this.startTime,
       required this.endTime,
-      required this.shortDescription,
-      required this.longDescription,
+      required this.club,
+      required this.venue,
+      required this.registrations,
       required final List<String> tags})
       : _tags = tags;
 
@@ -237,19 +279,25 @@ class _$EventModelImpl with DiagnosticableTreeMixin implements _EventModel {
   @override
   final DateTime updatedAt;
   @override
+  final String type;
+  @override
   final String title;
   @override
   final String image;
   @override
-  final String type;
+  final String tagline;
+  @override
+  final String description;
   @override
   final DateTime startTime;
   @override
   final DateTime endTime;
   @override
-  final String shortDescription;
+  final String club;
   @override
-  final String longDescription;
+  final String venue;
+  @override
+  final int registrations;
   final List<String> _tags;
   @override
   List<String> get tags {
@@ -260,7 +308,7 @@ class _$EventModelImpl with DiagnosticableTreeMixin implements _EventModel {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'EventModel(createdAt: $createdAt, updatedAt: $updatedAt, title: $title, image: $image, type: $type, startTime: $startTime, endTime: $endTime, shortDescription: $shortDescription, longDescription: $longDescription, tags: $tags)';
+    return 'EventModel(createdAt: $createdAt, updatedAt: $updatedAt, type: $type, title: $title, image: $image, tagline: $tagline, description: $description, startTime: $startTime, endTime: $endTime, club: $club, venue: $venue, registrations: $registrations, tags: $tags)';
   }
 
   @override
@@ -270,13 +318,16 @@ class _$EventModelImpl with DiagnosticableTreeMixin implements _EventModel {
       ..add(DiagnosticsProperty('type', 'EventModel'))
       ..add(DiagnosticsProperty('createdAt', createdAt))
       ..add(DiagnosticsProperty('updatedAt', updatedAt))
+      ..add(DiagnosticsProperty('type', type))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('image', image))
-      ..add(DiagnosticsProperty('type', type))
+      ..add(DiagnosticsProperty('tagline', tagline))
+      ..add(DiagnosticsProperty('description', description))
       ..add(DiagnosticsProperty('startTime', startTime))
       ..add(DiagnosticsProperty('endTime', endTime))
-      ..add(DiagnosticsProperty('shortDescription', shortDescription))
-      ..add(DiagnosticsProperty('longDescription', longDescription))
+      ..add(DiagnosticsProperty('club', club))
+      ..add(DiagnosticsProperty('venue', venue))
+      ..add(DiagnosticsProperty('registrations', registrations))
       ..add(DiagnosticsProperty('tags', tags));
   }
 
@@ -289,16 +340,19 @@ class _$EventModelImpl with DiagnosticableTreeMixin implements _EventModel {
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.image, image) || other.image == image) &&
-            (identical(other.type, type) || other.type == type) &&
+            (identical(other.tagline, tagline) || other.tagline == tagline) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.startTime, startTime) ||
                 other.startTime == startTime) &&
             (identical(other.endTime, endTime) || other.endTime == endTime) &&
-            (identical(other.shortDescription, shortDescription) ||
-                other.shortDescription == shortDescription) &&
-            (identical(other.longDescription, longDescription) ||
-                other.longDescription == longDescription) &&
+            (identical(other.club, club) || other.club == club) &&
+            (identical(other.venue, venue) || other.venue == venue) &&
+            (identical(other.registrations, registrations) ||
+                other.registrations == registrations) &&
             const DeepCollectionEquality().equals(other._tags, _tags));
   }
 
@@ -308,13 +362,16 @@ class _$EventModelImpl with DiagnosticableTreeMixin implements _EventModel {
       runtimeType,
       createdAt,
       updatedAt,
+      type,
       title,
       image,
-      type,
+      tagline,
+      description,
       startTime,
       endTime,
-      shortDescription,
-      longDescription,
+      club,
+      venue,
+      registrations,
       const DeepCollectionEquality().hash(_tags));
 
   @JsonKey(ignore: true)
@@ -335,13 +392,16 @@ abstract class _EventModel implements EventModel {
   const factory _EventModel(
       {required final DateTime createdAt,
       required final DateTime updatedAt,
+      required final String type,
       required final String title,
       required final String image,
-      required final String type,
+      required final String tagline,
+      required final String description,
       required final DateTime startTime,
       required final DateTime endTime,
-      required final String shortDescription,
-      required final String longDescription,
+      required final String club,
+      required final String venue,
+      required final int registrations,
       required final List<String> tags}) = _$EventModelImpl;
 
   factory _EventModel.fromJson(Map<String, dynamic> json) =
@@ -352,19 +412,25 @@ abstract class _EventModel implements EventModel {
   @override
   DateTime get updatedAt;
   @override
+  String get type;
+  @override
   String get title;
   @override
   String get image;
   @override
-  String get type;
+  String get tagline;
+  @override
+  String get description;
   @override
   DateTime get startTime;
   @override
   DateTime get endTime;
   @override
-  String get shortDescription;
+  String get club;
   @override
-  String get longDescription;
+  String get venue;
+  @override
+  int get registrations;
   @override
   List<String> get tags;
   @override

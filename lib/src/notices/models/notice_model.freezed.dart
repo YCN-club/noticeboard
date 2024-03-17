@@ -22,13 +22,14 @@ NoticeModel _$NoticeModelFromJson(Map<String, dynamic> json) {
 mixin _$NoticeModel {
   DateTime get createdAt => throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  String get tagline => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   DateTime get startTime => throw _privateConstructorUsedError;
   DateTime get endTime => throw _privateConstructorUsedError;
-  String get shortDescription => throw _privateConstructorUsedError;
-  String get longDescription => throw _privateConstructorUsedError;
+  String get club => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,13 +47,14 @@ abstract class $NoticeModelCopyWith<$Res> {
   $Res call(
       {DateTime createdAt,
       DateTime updatedAt,
+      String type,
       String title,
       String image,
-      String type,
+      String tagline,
+      String description,
       DateTime startTime,
       DateTime endTime,
-      String shortDescription,
-      String longDescription,
+      String club,
       List<String> tags});
 }
 
@@ -71,13 +73,14 @@ class _$NoticeModelCopyWithImpl<$Res, $Val extends NoticeModel>
   $Res call({
     Object? createdAt = null,
     Object? updatedAt = null,
+    Object? type = null,
     Object? title = null,
     Object? image = null,
-    Object? type = null,
+    Object? tagline = null,
+    Object? description = null,
     Object? startTime = null,
     Object? endTime = null,
-    Object? shortDescription = null,
-    Object? longDescription = null,
+    Object? club = null,
     Object? tags = null,
   }) {
     return _then(_value.copyWith(
@@ -89,6 +92,10 @@ class _$NoticeModelCopyWithImpl<$Res, $Val extends NoticeModel>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -97,9 +104,13 @@ class _$NoticeModelCopyWithImpl<$Res, $Val extends NoticeModel>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
+      tagline: null == tagline
+          ? _value.tagline
+          : tagline // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       startTime: null == startTime
           ? _value.startTime
@@ -109,13 +120,9 @@ class _$NoticeModelCopyWithImpl<$Res, $Val extends NoticeModel>
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      shortDescription: null == shortDescription
-          ? _value.shortDescription
-          : shortDescription // ignore: cast_nullable_to_non_nullable
-              as String,
-      longDescription: null == longDescription
-          ? _value.longDescription
-          : longDescription // ignore: cast_nullable_to_non_nullable
+      club: null == club
+          ? _value.club
+          : club // ignore: cast_nullable_to_non_nullable
               as String,
       tags: null == tags
           ? _value.tags
@@ -136,13 +143,14 @@ abstract class _$$NoticeModelImplCopyWith<$Res>
   $Res call(
       {DateTime createdAt,
       DateTime updatedAt,
+      String type,
       String title,
       String image,
-      String type,
+      String tagline,
+      String description,
       DateTime startTime,
       DateTime endTime,
-      String shortDescription,
-      String longDescription,
+      String club,
       List<String> tags});
 }
 
@@ -159,13 +167,14 @@ class __$$NoticeModelImplCopyWithImpl<$Res>
   $Res call({
     Object? createdAt = null,
     Object? updatedAt = null,
+    Object? type = null,
     Object? title = null,
     Object? image = null,
-    Object? type = null,
+    Object? tagline = null,
+    Object? description = null,
     Object? startTime = null,
     Object? endTime = null,
-    Object? shortDescription = null,
-    Object? longDescription = null,
+    Object? club = null,
     Object? tags = null,
   }) {
     return _then(_$NoticeModelImpl(
@@ -177,6 +186,10 @@ class __$$NoticeModelImplCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -185,9 +198,13 @@ class __$$NoticeModelImplCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
+      tagline: null == tagline
+          ? _value.tagline
+          : tagline // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       startTime: null == startTime
           ? _value.startTime
@@ -197,13 +214,9 @@ class __$$NoticeModelImplCopyWithImpl<$Res>
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      shortDescription: null == shortDescription
-          ? _value.shortDescription
-          : shortDescription // ignore: cast_nullable_to_non_nullable
-              as String,
-      longDescription: null == longDescription
-          ? _value.longDescription
-          : longDescription // ignore: cast_nullable_to_non_nullable
+      club: null == club
+          ? _value.club
+          : club // ignore: cast_nullable_to_non_nullable
               as String,
       tags: null == tags
           ? _value._tags
@@ -219,13 +232,14 @@ class _$NoticeModelImpl with DiagnosticableTreeMixin implements _NoticeModel {
   const _$NoticeModelImpl(
       {required this.createdAt,
       required this.updatedAt,
+      required this.type,
       required this.title,
       required this.image,
-      required this.type,
+      required this.tagline,
+      required this.description,
       required this.startTime,
       required this.endTime,
-      required this.shortDescription,
-      required this.longDescription,
+      required this.club,
       required final List<String> tags})
       : _tags = tags;
 
@@ -237,19 +251,21 @@ class _$NoticeModelImpl with DiagnosticableTreeMixin implements _NoticeModel {
   @override
   final DateTime updatedAt;
   @override
+  final String type;
+  @override
   final String title;
   @override
   final String image;
   @override
-  final String type;
+  final String tagline;
+  @override
+  final String description;
   @override
   final DateTime startTime;
   @override
   final DateTime endTime;
   @override
-  final String shortDescription;
-  @override
-  final String longDescription;
+  final String club;
   final List<String> _tags;
   @override
   List<String> get tags {
@@ -260,7 +276,7 @@ class _$NoticeModelImpl with DiagnosticableTreeMixin implements _NoticeModel {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NoticeModel(createdAt: $createdAt, updatedAt: $updatedAt, title: $title, image: $image, type: $type, startTime: $startTime, endTime: $endTime, shortDescription: $shortDescription, longDescription: $longDescription, tags: $tags)';
+    return 'NoticeModel(createdAt: $createdAt, updatedAt: $updatedAt, type: $type, title: $title, image: $image, tagline: $tagline, description: $description, startTime: $startTime, endTime: $endTime, club: $club, tags: $tags)';
   }
 
   @override
@@ -270,13 +286,14 @@ class _$NoticeModelImpl with DiagnosticableTreeMixin implements _NoticeModel {
       ..add(DiagnosticsProperty('type', 'NoticeModel'))
       ..add(DiagnosticsProperty('createdAt', createdAt))
       ..add(DiagnosticsProperty('updatedAt', updatedAt))
+      ..add(DiagnosticsProperty('type', type))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('image', image))
-      ..add(DiagnosticsProperty('type', type))
+      ..add(DiagnosticsProperty('tagline', tagline))
+      ..add(DiagnosticsProperty('description', description))
       ..add(DiagnosticsProperty('startTime', startTime))
       ..add(DiagnosticsProperty('endTime', endTime))
-      ..add(DiagnosticsProperty('shortDescription', shortDescription))
-      ..add(DiagnosticsProperty('longDescription', longDescription))
+      ..add(DiagnosticsProperty('club', club))
       ..add(DiagnosticsProperty('tags', tags));
   }
 
@@ -289,16 +306,16 @@ class _$NoticeModelImpl with DiagnosticableTreeMixin implements _NoticeModel {
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.image, image) || other.image == image) &&
-            (identical(other.type, type) || other.type == type) &&
+            (identical(other.tagline, tagline) || other.tagline == tagline) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.startTime, startTime) ||
                 other.startTime == startTime) &&
             (identical(other.endTime, endTime) || other.endTime == endTime) &&
-            (identical(other.shortDescription, shortDescription) ||
-                other.shortDescription == shortDescription) &&
-            (identical(other.longDescription, longDescription) ||
-                other.longDescription == longDescription) &&
+            (identical(other.club, club) || other.club == club) &&
             const DeepCollectionEquality().equals(other._tags, _tags));
   }
 
@@ -308,13 +325,14 @@ class _$NoticeModelImpl with DiagnosticableTreeMixin implements _NoticeModel {
       runtimeType,
       createdAt,
       updatedAt,
+      type,
       title,
       image,
-      type,
+      tagline,
+      description,
       startTime,
       endTime,
-      shortDescription,
-      longDescription,
+      club,
       const DeepCollectionEquality().hash(_tags));
 
   @JsonKey(ignore: true)
@@ -335,13 +353,14 @@ abstract class _NoticeModel implements NoticeModel {
   const factory _NoticeModel(
       {required final DateTime createdAt,
       required final DateTime updatedAt,
+      required final String type,
       required final String title,
       required final String image,
-      required final String type,
+      required final String tagline,
+      required final String description,
       required final DateTime startTime,
       required final DateTime endTime,
-      required final String shortDescription,
-      required final String longDescription,
+      required final String club,
       required final List<String> tags}) = _$NoticeModelImpl;
 
   factory _NoticeModel.fromJson(Map<String, dynamic> json) =
@@ -352,19 +371,21 @@ abstract class _NoticeModel implements NoticeModel {
   @override
   DateTime get updatedAt;
   @override
+  String get type;
+  @override
   String get title;
   @override
   String get image;
   @override
-  String get type;
+  String get tagline;
+  @override
+  String get description;
   @override
   DateTime get startTime;
   @override
   DateTime get endTime;
   @override
-  String get shortDescription;
-  @override
-  String get longDescription;
+  String get club;
   @override
   List<String> get tags;
   @override

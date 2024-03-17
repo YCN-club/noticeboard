@@ -12,13 +12,14 @@ class NoticeModel with _$NoticeModel {
   const factory NoticeModel({
     required DateTime createdAt,
     required DateTime updatedAt,
+    required String type,
     required String title,
     required String image,
-    required String type,
+    required String tagline,
+    required String description,
     required DateTime startTime,
     required DateTime endTime,
-    required String shortDescription,
-    required String longDescription,
+    required String club,
     required List<String> tags,
   }) = _NoticeModel;
 
