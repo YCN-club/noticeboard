@@ -3,8 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'package:noticeboard/src/contributors/views/contributors_view.dart';
-import 'package:noticeboard/src/navigation/components/keep_alive_page.dart';
-import 'package:noticeboard/src/notices/views/events_view.dart';
 
 class NavigationView extends StatefulWidget {
   const NavigationView({super.key});
@@ -15,7 +13,9 @@ class NavigationView extends StatefulWidget {
 
 class _NavigationViewState extends State<NavigationView> {
   final List<Widget> _views = <Widget>[
-    KeepAlivePage(child: const EventsView()),
+    const Center(
+      child: Text('Events View'),
+    ),
     const Center(
       child: Text('Profile View'),
     ),
