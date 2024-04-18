@@ -3,8 +3,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'package:noticeboard/src/contributors/views/contributors_view.dart';
+import 'package:noticeboard/src/events/views/event_view.dart';
 import 'package:noticeboard/src/navigation/components/keep_alive_page.dart';
-import 'package:noticeboard/src/notices/views/events_view.dart';
+import 'package:noticeboard/src/notices/views/notices_view.dart';
+import 'package:noticeboard/src/profile/views/profile_view.dart';
 
 class NavigationView extends StatefulWidget {
   const NavigationView({super.key});
@@ -15,13 +17,9 @@ class NavigationView extends StatefulWidget {
 
 class _NavigationViewState extends State<NavigationView> {
   final List<Widget> _views = <Widget>[
-    KeepAlivePage(child: const EventsView()),
-    const Center(
-      child: Text('Profile View'),
-    ),
-    const Center(
-      child: Text('Notices View'),
-    ),
+    KeepAlivePage(child: EventsView()),
+    KeepAlivePage(child: ProfileView()),
+    KeepAlivePage(child: NoticesView()),
   ];
   PageController _pageController = PageController(initialPage: 1);
   int _selectedIndex = 1;
@@ -38,7 +36,7 @@ class _NavigationViewState extends State<NavigationView> {
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
             child: Padding(
-              padding: const EdgeInsets.all(6.0),
+              padding: const EdgeInsets.fromLTRB(6.0, 6.0, 6.0, 0.0),
               child: AppBar(
                 backgroundColor: colorScheme.background.withOpacity(0.6),
                 title: Image.asset(

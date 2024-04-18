@@ -1,0 +1,93 @@
+[
+	{
+		"name": "Hackathon",
+		"club": "CodeX",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T09:30:00Z",
+		"participants": 150
+	},
+	{
+		"name": "Game Jam",
+		"club": "SideQuest",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T14:00:00Z",
+		"participants": 80
+	},
+	{
+		"name": "MUN Conference",
+		"club": "Potentia MUN",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T16:30:00Z",
+		"participants": 120
+	},
+	{
+		"name": "Creative Workshop",
+		"club": "YourSpace",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T19:30:00Z",
+		"participants": 200
+	},
+	{
+		"name": "Tech Talk",
+		"club": "CodeX",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T09:30:00Z",
+		"participants": 150
+	},
+	{
+		"name": "Workshop",
+		"club": "CodeX",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T14:00:00Z",
+		"participants": 150
+	},
+	{
+		"name": "Panel Discussion",
+		"club": "CodeX",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T16:30:00Z",
+		"participants": 150
+	},
+	{
+		"name": "Networking Event",
+		"club": "SideQuest",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T19:30:00Z",
+		"participants": 80
+	},
+	{
+		"name": "Training Session",
+		"club": "Potentia MUN",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T09:30:00Z",
+		"participants": 120
+	},
+	{
+		"name": "Leadership Seminar",
+		"club": "YourSpace",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T14:00:00Z",
+		"participants": 200
+	},
+	{
+		"name": "Codeathon",
+		"club": "CodeX",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T16:30:00Z",
+		"participants": 150
+	},
+	{
+		"name": "Meetup",
+		"club": "CodeX",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T19:30:00Z",
+		"participants": 150
+	},
+	{
+		"name": "Training Workshop",
+		"club": "CodeX",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T09:30:00Z",
+		"participants": 150
+	}
+]

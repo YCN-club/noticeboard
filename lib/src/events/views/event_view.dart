@@ -5,12 +5,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-import 'package:noticeboard/src/notices/components/event_list.dart';
-import 'package:noticeboard/src/notices/models/event_model.dart';
+import 'package:noticeboard/src/events/components/event_list.dart';
+import 'package:noticeboard/src/events/models/event_model.dart';
 
 Future<List<Event>> fetchEvents() async {
   final String jsonString =
-      await rootBundle.loadString('lib/src/notices/data/event_data.json');
+      await rootBundle.loadString('lib/src/events/data/event_data.json');
 
   return compute(parseEvents, jsonString);
 }
@@ -21,8 +21,8 @@ List<Event> parseEvents(String jsonString) {
   return parsed.map<Event>((json) => Event.fromJson(json)).toList();
 }
 
-class NoticesView extends StatelessWidget {
-  NoticesView({Key? key, this.events}) : super(key: key);
+class EventsView extends StatelessWidget {
+  EventsView({Key? key, this.events}) : super(key: key);
 
   final List<Event>? events;
 

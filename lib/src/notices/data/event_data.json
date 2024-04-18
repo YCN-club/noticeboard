@@ -1,0 +1,93 @@
+[
+	{
+		"name": "Example Notice",
+		"club": "Student Council",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T09:30:00Z",
+		"participants": 150
+	},
+	{
+		"name": "Urgent Notice",
+		"club": "Student Welfare",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T14:00:00Z",
+		"participants": 80
+	},
+	{
+		"name": "Industry Academia",
+		"club": "MIT-BLR Placement Cell",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T16:30:00Z",
+		"participants": 120
+	},
+	{
+		"name": "Example Notice",
+		"club": "MIT-BLR Administration",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T19:00:00Z",
+		"participants": 200
+	},
+	{
+		"name": "Example Notice",
+		"club": "Student Council",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T09:30:00Z",
+		"participants": 150
+	},
+	{
+		"name": "Example Notice",
+		"club": "Student Council",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T14:00:00Z",
+		"participants": 150
+	},
+	{
+		"name": "Example Notice",
+		"club": "Student Council",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T16:30:00Z",
+		"participants": 150
+	},
+	{
+		"name": "Urgent Notice",
+		"club": "Student Welfare",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T19:00:00Z",
+		"participants": 80
+	},
+	{
+		"name": "Industry Academia",
+		"club": "MIT-BLR Placement Cell",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T09:30:00Z",
+		"participants": 120
+	},
+	{
+		"name": "Example Notice",
+		"club": "MIT-BLR Administration",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T14:00:00Z",
+		"participants": 200
+	},
+	{
+		"name": "Example Notice",
+		"club": "Student Council",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T16:30:00Z",
+		"participants": 150
+	},
+	{
+		"name": "Example Notice",
+		"club": "Student Council",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T19:00:00Z",
+		"participants": 150
+	},
+	{
+		"name": "Example Notice",
+		"club": "Student Council",
+		"location": "Seminar Hall",
+		"date": "2024-04-18T09:30:00Z",
+		"participants": 150
+	}
+]
