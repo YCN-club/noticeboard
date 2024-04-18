@@ -36,6 +36,7 @@ dependencies:
   flutter_dotenv: ^5.0.2
   flutter_native_splash: ^2.3.13
   flutter_riverpod: ^2.4.10
+  font_awesome_flutter: ^10.7.0
   freezed_annotation: ^2.4.1
   http: ^1.2.1
   json_annotation: ^4.8.1
@@ -61,14 +62,11 @@ dev_dependencies:
 flutter:
   assets:
     - assets/launcher-icon.png
-    - assets/noticeboard/logo-light.png
-    - assets/noticeboard/logo-dark.png
-    - assets/noticeboard/logo-square-light.png
-    - assets/noticeboard/logo-square-dark.png
-    - assets/mitblr.club/logo-light.png
-    - assets/mitblr.club/logo-dark.png
-    - assets/mitblr.club/logo-ghost.png
+    - assets/noticeboard/
+    - assets/mitblr.club/
     - assets/loading.gif
+    - lib/src/events/data/event_data.json
+    - lib/src/notices/data/event_data.json
 
   uses-material-design: true
 
